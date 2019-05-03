@@ -1,0 +1,2181 @@
+2019-05-03 11:15:18,454 (MainThread): Tracking: tracking
+2019-05-03 11:15:18,464 (MainThread): Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x111f205f8>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x111f20390>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x111f20438>]}
+2019-05-03 11:15:18,779 (MainThread): Parsing macros/core.sql
+2019-05-03 11:15:18,786 (MainThread): Parsing macros/materializations/helpers.sql
+2019-05-03 11:15:18,795 (MainThread): Parsing macros/materializations/seed/seed.sql
+2019-05-03 11:15:18,812 (MainThread): Parsing macros/materializations/incremental/incremental.sql
+2019-05-03 11:15:18,825 (MainThread): Parsing macros/materializations/archive/archive.sql
+2019-05-03 11:15:18,850 (MainThread): Parsing macros/materializations/common/merge.sql
+2019-05-03 11:15:18,855 (MainThread): Parsing macros/materializations/table/table.sql
+2019-05-03 11:15:18,866 (MainThread): Parsing macros/materializations/view/view.sql
+2019-05-03 11:15:18,874 (MainThread): Parsing macros/materializations/view/create_or_replace_view.sql
+2019-05-03 11:15:18,881 (MainThread): Parsing macros/etc/is_incremental.sql
+2019-05-03 11:15:18,885 (MainThread): Parsing macros/etc/datetime.sql
+2019-05-03 11:15:18,896 (MainThread): Parsing macros/etc/get_custom_schema.sql
+2019-05-03 11:15:18,900 (MainThread): Parsing macros/adapters/common.sql
+2019-05-03 11:15:18,935 (MainThread): Parsing macros/schema_tests/relationships.sql
+2019-05-03 11:15:18,937 (MainThread): Parsing macros/schema_tests/not_null.sql
+2019-05-03 11:15:18,939 (MainThread): Parsing macros/schema_tests/unique.sql
+2019-05-03 11:15:18,942 (MainThread): Parsing macros/schema_tests/accepted_values.sql
+2019-05-03 11:15:18,945 (MainThread): Parsing macros/catalog.sql
+2019-05-03 11:15:18,948 (MainThread): Parsing macros/relations.sql
+2019-05-03 11:15:18,951 (MainThread): Parsing macros/adapters.sql
+2019-05-03 11:15:18,969 (MainThread): Parsing model.my_new_package.my_first_dbt_model
+2019-05-03 11:15:19,000 (MainThread): Found 1 models, 0 tests, 0 archives, 0 analyses, 94 macros, 0 operations, 0 seed files, 0 sources
+2019-05-03 11:15:19,000 (MainThread): 
+2019-05-03 11:15:19,013 (MainThread): Parsing macros/core.sql
+2019-05-03 11:15:19,018 (MainThread): Parsing macros/materializations/helpers.sql
+2019-05-03 11:15:19,025 (MainThread): Parsing macros/materializations/seed/seed.sql
+2019-05-03 11:15:19,041 (MainThread): Parsing macros/materializations/incremental/incremental.sql
+2019-05-03 11:15:19,052 (MainThread): Parsing macros/materializations/archive/archive.sql
+2019-05-03 11:15:19,075 (MainThread): Parsing macros/materializations/common/merge.sql
+2019-05-03 11:15:19,079 (MainThread): Parsing macros/materializations/table/table.sql
+2019-05-03 11:15:19,092 (MainThread): Parsing macros/materializations/view/view.sql
+2019-05-03 11:15:19,100 (MainThread): Parsing macros/materializations/view/create_or_replace_view.sql
+2019-05-03 11:15:19,107 (MainThread): Parsing macros/etc/is_incremental.sql
+2019-05-03 11:15:19,109 (MainThread): Parsing macros/etc/datetime.sql
+2019-05-03 11:15:19,116 (MainThread): Parsing macros/etc/get_custom_schema.sql
+2019-05-03 11:15:19,119 (MainThread): Parsing macros/adapters/common.sql
+2019-05-03 11:15:19,148 (MainThread): Parsing macros/schema_tests/relationships.sql
+2019-05-03 11:15:19,149 (MainThread): Parsing macros/schema_tests/not_null.sql
+2019-05-03 11:15:19,151 (MainThread): Parsing macros/schema_tests/unique.sql
+2019-05-03 11:15:19,152 (MainThread): Parsing macros/schema_tests/accepted_values.sql
+2019-05-03 11:15:19,153 (MainThread): Parsing macros/catalog.sql
+2019-05-03 11:15:19,156 (MainThread): Parsing macros/relations.sql
+2019-05-03 11:15:19,158 (MainThread): Parsing macros/adapters.sql
+2019-05-03 11:15:19,261 (MainThread): Acquiring new postgres connection "list_relations_without_caching".
+2019-05-03 11:15:19,262 (MainThread): Opening a new connection, currently in state init
+2019-05-03 11:15:19,296 (MainThread): Using postgres connection "list_relations_without_caching".
+2019-05-03 11:15:19,296 (MainThread): On list_relations_without_caching: BEGIN
+2019-05-03 11:15:19,297 (MainThread): SQL status: BEGIN in 0.00 seconds
+2019-05-03 11:15:19,297 (MainThread): Using postgres connection "list_relations_without_caching".
+2019-05-03 11:15:19,297 (MainThread): On list_relations_without_caching: select
+      'practicedb' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'dbt_justin'
+    union all
+    select
+      'practicedb' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'dbt_justin'
+  
+2019-05-03 11:15:19,305 (MainThread): SQL status: SELECT 0 in 0.01 seconds
+2019-05-03 11:15:19,307 (MainThread): On list_relations_without_caching: ROLLBACK
+2019-05-03 11:15:19,312 (MainThread): Acquiring new postgres connection "postgres_get_relations".
+2019-05-03 11:15:19,312 (MainThread): Re-using an available connection from the pool.
+2019-05-03 11:15:19,313 (MainThread): Using postgres connection "postgres_get_relations".
+2019-05-03 11:15:19,313 (MainThread): On postgres_get_relations: BEGIN
+2019-05-03 11:15:19,313 (MainThread): SQL status: BEGIN in 0.00 seconds
+2019-05-03 11:15:19,313 (MainThread): Using postgres connection "postgres_get_relations".
+2019-05-03 11:15:19,313 (MainThread): On postgres_get_relations: -- 
+    -- 
+    with relation as (
+        select
+            pg_rewrite.ev_class as class,
+            pg_rewrite.oid as id
+        from pg_rewrite
+    ),
+    class as (
+        select
+            oid as id,
+            relname as name,
+            relnamespace as schema,
+            relkind as kind
+        from pg_class
+    ),
+    dependency as (
+        select
+            pg_depend.objid as id,
+            pg_depend.refobjid as ref
+        from pg_depend
+    ),
+    schema as (
+        select
+            pg_namespace.oid as id,
+            pg_namespace.nspname as name
+        from pg_namespace
+        where nspname != 'information_schema' and nspname not like 'pg_%'
+    ),
+    referenced as (
+        select
+            relation.id AS id,
+            referenced_class.name ,
+            referenced_class.schema ,
+            referenced_class.kind
+        from relation
+        join class as referenced_class on relation.class=referenced_class.id
+        where referenced_class.kind in ('r', 'v')
+    ),
+    relationships as (
+        select
+            referenced.name as referenced_name,
+            referenced.schema as referenced_schema_id,
+            dependent_class.name as dependent_name,
+            dependent_class.schema as dependent_schema_id,
+            referenced.kind as kind
+        from referenced
+        join dependency on referenced.id=dependency.id
+        join class as dependent_class on dependency.ref=dependent_class.id
+        where
+            (referenced.name != dependent_class.name or
+             referenced.schema != dependent_class.schema)
+    )
+
+    select
+        referenced_schema.name as referenced_schema,
+        relationships.referenced_name as referenced_name,
+        dependent_schema.name as dependent_schema,
+        relationships.dependent_name as dependent_name
+    from relationships
+    join schema as dependent_schema on relationships.dependent_schema_id=dependent_schema.id
+    join schema as referenced_schema on relationships.referenced_schema_id=referenced_schema.id
+    group by referenced_schema, referenced_name, dependent_schema, dependent_name
+    order by referenced_schema, referenced_name, dependent_schema, dependent_name;
+2019-05-03 11:15:19,325 (MainThread): SQL status: SELECT 38 in 0.01 seconds
+2019-05-03 11:15:19,349 (MainThread): On postgres_get_relations: ROLLBACK
+2019-05-03 11:15:19,352 (MainThread): Acquiring new postgres connection "list_schemas".
+2019-05-03 11:15:19,352 (MainThread): Re-using an available connection from the pool.
+2019-05-03 11:15:19,352 (MainThread): Using postgres connection "list_schemas".
+2019-05-03 11:15:19,352 (MainThread): On list_schemas: 
+    select distinct nspname from pg_namespace
+  
+2019-05-03 11:15:19,352 (MainThread): SQL status: SELECT 6 in 0.00 seconds
+2019-05-03 11:15:19,353 (MainThread): Creating schema "practicedb"."dbt_justin".
+2019-05-03 11:15:19,355 (MainThread): Acquiring new postgres connection "master".
+2019-05-03 11:15:19,355 (MainThread): Re-using an available connection from the pool.
+2019-05-03 11:15:19,355 (MainThread): Using postgres connection "master".
+2019-05-03 11:15:19,356 (MainThread): On master: BEGIN
+2019-05-03 11:15:19,356 (MainThread): SQL status: BEGIN in 0.00 seconds
+2019-05-03 11:15:19,356 (MainThread): Using postgres connection "master".
+2019-05-03 11:15:19,356 (MainThread): On master: create schema if not exists "dbt_justin"
+2019-05-03 11:15:19,362 (MainThread): SQL status: CREATE SCHEMA in 0.01 seconds
+2019-05-03 11:15:19,363 (MainThread): On master: COMMIT
+2019-05-03 11:15:19,363 (MainThread): Using postgres connection "master".
+2019-05-03 11:15:19,363 (MainThread): On master: COMMIT
+2019-05-03 11:15:19,366 (MainThread): SQL status: COMMIT in 0.00 seconds
+2019-05-03 11:15:19,366 (MainThread): 11:15:19 | Concurrency: 1 threads (target='dev')
+2019-05-03 11:15:19,367 (MainThread): 11:15:19 | 
+2019-05-03 11:15:19,373 (Thread-1): 11:15:19 | 1 of 1 START view model dbt_justin.my_first_dbt_model................ [RUN]
+2019-05-03 11:15:19,374 (Thread-1): Compiling model.my_new_package.my_first_dbt_model
+2019-05-03 11:15:19,377 (Thread-1): Writing injected SQL for node "model.my_new_package.my_first_dbt_model"
+2019-05-03 11:15:19,413 (Thread-1): Acquiring new postgres connection "my_first_dbt_model".
+2019-05-03 11:15:19,414 (Thread-1): Opening a new connection, currently in state init
+2019-05-03 11:15:19,421 (Thread-1): Using postgres connection "my_first_dbt_model".
+2019-05-03 11:15:19,421 (Thread-1): On my_first_dbt_model: drop view if exists "practicedb"."dbt_justin"."my_first_dbt_model__dbt_tmp" cascade
+2019-05-03 11:15:19,425 (Thread-1): SQL status: DROP VIEW in 0.00 seconds
+2019-05-03 11:15:19,427 (Thread-1): Using postgres connection "my_first_dbt_model".
+2019-05-03 11:15:19,427 (Thread-1): On my_first_dbt_model: drop view if exists "practicedb"."dbt_justin"."my_first_dbt_model__dbt_backup" cascade
+2019-05-03 11:15:19,428 (Thread-1): SQL status: DROP VIEW in 0.00 seconds
+2019-05-03 11:15:19,429 (Thread-1): Writing runtime SQL for node "model.my_new_package.my_first_dbt_model"
+2019-05-03 11:15:19,430 (Thread-1): Using postgres connection "my_first_dbt_model".
+2019-05-03 11:15:19,430 (Thread-1): On my_first_dbt_model: BEGIN
+2019-05-03 11:15:19,430 (Thread-1): SQL status: BEGIN in 0.00 seconds
+2019-05-03 11:15:19,431 (Thread-1): Using postgres connection "my_first_dbt_model".
+2019-05-03 11:15:19,431 (Thread-1): On my_first_dbt_model: create view "practicedb"."dbt_justin"."my_first_dbt_model__dbt_tmp" as (
+    -- Welcome to your first dbt model!
+-- Did you know that you can also configure models directly within
+-- the SQL file? This will override configurations stated in dbt_project.yml
+
+-- Try changing 'view' to 'table', then re-running dbt
+
+
+
+select 1 as id
+  );
+2019-05-03 11:15:19,469 (Thread-1): SQL status: CREATE VIEW in 0.04 seconds
+2019-05-03 11:15:19,472 (Thread-1): Using postgres connection "my_first_dbt_model".
+2019-05-03 11:15:19,473 (Thread-1): On my_first_dbt_model: alter table "practicedb"."dbt_justin"."my_first_dbt_model__dbt_tmp" rename to "my_first_dbt_model"
+2019-05-03 11:15:19,475 (Thread-1): SQL status: ALTER TABLE in 0.00 seconds
+2019-05-03 11:15:19,476 (Thread-1): On my_first_dbt_model: COMMIT
+2019-05-03 11:15:19,476 (Thread-1): Using postgres connection "my_first_dbt_model".
+2019-05-03 11:15:19,476 (Thread-1): On my_first_dbt_model: COMMIT
+2019-05-03 11:15:19,477 (Thread-1): SQL status: COMMIT in 0.00 seconds
+2019-05-03 11:15:19,480 (Thread-1): Using postgres connection "my_first_dbt_model".
+2019-05-03 11:15:19,480 (Thread-1): On my_first_dbt_model: drop view if exists "practicedb"."dbt_justin"."my_first_dbt_model__dbt_backup" cascade
+2019-05-03 11:15:19,480 (Thread-1): SQL status: DROP VIEW in 0.00 seconds
+2019-05-03 11:15:19,484 (Thread-1): Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '1bea0ee0-7676-4609-b87f-f0f8ed6ca066', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1120a1518>]}
+2019-05-03 11:15:19,678 (Thread-1): 11:15:19 | 1 of 1 OK created view model dbt_justin.my_first_dbt_model........... [CREATE VIEW in 0.11s]
+2019-05-03 11:15:19,679 (MainThread): 11:15:19 | 
+2019-05-03 11:15:19,679 (MainThread): 11:15:19 | Finished running 1 view models in 0.68s.
+2019-05-03 11:15:19,680 (MainThread): Connection 'master' was left open.
+2019-05-03 11:15:19,684 (MainThread): 
+2019-05-03 11:15:19,684 (MainThread): Completed successfully
+2019-05-03 11:15:19,684 (MainThread): 
+Done. PASS=1 ERROR=0 SKIP=0 TOTAL=1
+2019-05-03 11:15:19,684 (MainThread): Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1121a6828>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1121a6160>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1120c06a0>]}
+2019-05-03 11:15:19,881 (MainThread): Flushing usage events
+2019-05-03 11:16:24,904 (MainThread): Tracking: tracking
+2019-05-03 11:16:24,914 (MainThread): Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1123dd7b8>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1123dd2e8>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1123dd390>]}
+2019-05-03 11:16:25,254 (MainThread): Parsing macros/core.sql
+2019-05-03 11:16:25,261 (MainThread): Parsing macros/materializations/helpers.sql
+2019-05-03 11:16:25,270 (MainThread): Parsing macros/materializations/seed/seed.sql
+2019-05-03 11:16:25,286 (MainThread): Parsing macros/materializations/incremental/incremental.sql
+2019-05-03 11:16:25,298 (MainThread): Parsing macros/materializations/archive/archive.sql
+2019-05-03 11:16:25,323 (MainThread): Parsing macros/materializations/common/merge.sql
+2019-05-03 11:16:25,329 (MainThread): Parsing macros/materializations/table/table.sql
+2019-05-03 11:16:25,339 (MainThread): Parsing macros/materializations/view/view.sql
+2019-05-03 11:16:25,348 (MainThread): Parsing macros/materializations/view/create_or_replace_view.sql
+2019-05-03 11:16:25,355 (MainThread): Parsing macros/etc/is_incremental.sql
+2019-05-03 11:16:25,359 (MainThread): Parsing macros/etc/datetime.sql
+2019-05-03 11:16:25,369 (MainThread): Parsing macros/etc/get_custom_schema.sql
+2019-05-03 11:16:25,372 (MainThread): Parsing macros/adapters/common.sql
+2019-05-03 11:16:25,401 (MainThread): Parsing macros/schema_tests/relationships.sql
+2019-05-03 11:16:25,403 (MainThread): Parsing macros/schema_tests/not_null.sql
+2019-05-03 11:16:25,404 (MainThread): Parsing macros/schema_tests/unique.sql
+2019-05-03 11:16:25,406 (MainThread): Parsing macros/schema_tests/accepted_values.sql
+2019-05-03 11:16:25,409 (MainThread): Parsing macros/catalog.sql
+2019-05-03 11:16:25,412 (MainThread): Parsing macros/relations.sql
+2019-05-03 11:16:25,415 (MainThread): Parsing macros/adapters.sql
+2019-05-03 11:16:25,431 (MainThread): Parsing model.my_new_package.my_first_dbt_model
+2019-05-03 11:16:25,459 (MainThread): Found 1 models, 0 tests, 0 archives, 0 analyses, 94 macros, 0 operations, 0 seed files, 0 sources
+2019-05-03 11:16:25,460 (MainThread): 
+2019-05-03 11:16:25,473 (MainThread): Parsing macros/core.sql
+2019-05-03 11:16:25,477 (MainThread): Parsing macros/materializations/helpers.sql
+2019-05-03 11:16:25,483 (MainThread): Parsing macros/materializations/seed/seed.sql
+2019-05-03 11:16:25,502 (MainThread): Parsing macros/materializations/incremental/incremental.sql
+2019-05-03 11:16:25,513 (MainThread): Parsing macros/materializations/archive/archive.sql
+2019-05-03 11:16:25,538 (MainThread): Parsing macros/materializations/common/merge.sql
+2019-05-03 11:16:25,542 (MainThread): Parsing macros/materializations/table/table.sql
+2019-05-03 11:16:25,550 (MainThread): Parsing macros/materializations/view/view.sql
+2019-05-03 11:16:25,559 (MainThread): Parsing macros/materializations/view/create_or_replace_view.sql
+2019-05-03 11:16:25,568 (MainThread): Parsing macros/etc/is_incremental.sql
+2019-05-03 11:16:25,570 (MainThread): Parsing macros/etc/datetime.sql
+2019-05-03 11:16:25,579 (MainThread): Parsing macros/etc/get_custom_schema.sql
+2019-05-03 11:16:25,581 (MainThread): Parsing macros/adapters/common.sql
+2019-05-03 11:16:25,611 (MainThread): Parsing macros/schema_tests/relationships.sql
+2019-05-03 11:16:25,612 (MainThread): Parsing macros/schema_tests/not_null.sql
+2019-05-03 11:16:25,613 (MainThread): Parsing macros/schema_tests/unique.sql
+2019-05-03 11:16:25,615 (MainThread): Parsing macros/schema_tests/accepted_values.sql
+2019-05-03 11:16:25,616 (MainThread): Parsing macros/catalog.sql
+2019-05-03 11:16:25,618 (MainThread): Parsing macros/relations.sql
+2019-05-03 11:16:25,620 (MainThread): Parsing macros/adapters.sql
+2019-05-03 11:16:25,735 (MainThread): Acquiring new postgres connection "list_relations_without_caching".
+2019-05-03 11:16:25,735 (MainThread): Opening a new connection, currently in state init
+2019-05-03 11:16:25,764 (MainThread): Using postgres connection "list_relations_without_caching".
+2019-05-03 11:16:25,765 (MainThread): On list_relations_without_caching: BEGIN
+2019-05-03 11:16:25,765 (MainThread): SQL status: BEGIN in 0.00 seconds
+2019-05-03 11:16:25,765 (MainThread): Using postgres connection "list_relations_without_caching".
+2019-05-03 11:16:25,766 (MainThread): On list_relations_without_caching: select
+      'practicedb' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'dbt_justin'
+    union all
+    select
+      'practicedb' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'dbt_justin'
+  
+2019-05-03 11:16:25,768 (MainThread): SQL status: SELECT 1 in 0.00 seconds
+2019-05-03 11:16:25,778 (MainThread): On list_relations_without_caching: ROLLBACK
+2019-05-03 11:16:25,784 (MainThread): Acquiring new postgres connection "postgres_get_relations".
+2019-05-03 11:16:25,784 (MainThread): Re-using an available connection from the pool.
+2019-05-03 11:16:25,785 (MainThread): Using postgres connection "postgres_get_relations".
+2019-05-03 11:16:25,785 (MainThread): On postgres_get_relations: BEGIN
+2019-05-03 11:16:25,785 (MainThread): SQL status: BEGIN in 0.00 seconds
+2019-05-03 11:16:25,785 (MainThread): Using postgres connection "postgres_get_relations".
+2019-05-03 11:16:25,785 (MainThread): On postgres_get_relations: -- 
+    -- 
+    with relation as (
+        select
+            pg_rewrite.ev_class as class,
+            pg_rewrite.oid as id
+        from pg_rewrite
+    ),
+    class as (
+        select
+            oid as id,
+            relname as name,
+            relnamespace as schema,
+            relkind as kind
+        from pg_class
+    ),
+    dependency as (
+        select
+            pg_depend.objid as id,
+            pg_depend.refobjid as ref
+        from pg_depend
+    ),
+    schema as (
+        select
+            pg_namespace.oid as id,
+            pg_namespace.nspname as name
+        from pg_namespace
+        where nspname != 'information_schema' and nspname not like 'pg_%'
+    ),
+    referenced as (
+        select
+            relation.id AS id,
+            referenced_class.name ,
+            referenced_class.schema ,
+            referenced_class.kind
+        from relation
+        join class as referenced_class on relation.class=referenced_class.id
+        where referenced_class.kind in ('r', 'v')
+    ),
+    relationships as (
+        select
+            referenced.name as referenced_name,
+            referenced.schema as referenced_schema_id,
+            dependent_class.name as dependent_name,
+            dependent_class.schema as dependent_schema_id,
+            referenced.kind as kind
+        from referenced
+        join dependency on referenced.id=dependency.id
+        join class as dependent_class on dependency.ref=dependent_class.id
+        where
+            (referenced.name != dependent_class.name or
+             referenced.schema != dependent_class.schema)
+    )
+
+    select
+        referenced_schema.name as referenced_schema,
+        relationships.referenced_name as referenced_name,
+        dependent_schema.name as dependent_schema,
+        relationships.dependent_name as dependent_name
+    from relationships
+    join schema as dependent_schema on relationships.dependent_schema_id=dependent_schema.id
+    join schema as referenced_schema on relationships.referenced_schema_id=referenced_schema.id
+    group by referenced_schema, referenced_name, dependent_schema, dependent_name
+    order by referenced_schema, referenced_name, dependent_schema, dependent_name;
+2019-05-03 11:16:25,791 (MainThread): SQL status: SELECT 38 in 0.01 seconds
+2019-05-03 11:16:25,809 (MainThread): On postgres_get_relations: ROLLBACK
+2019-05-03 11:16:25,811 (MainThread): Acquiring new postgres connection "list_schemas".
+2019-05-03 11:16:25,812 (MainThread): Re-using an available connection from the pool.
+2019-05-03 11:16:25,812 (MainThread): Using postgres connection "list_schemas".
+2019-05-03 11:16:25,812 (MainThread): On list_schemas: 
+    select distinct nspname from pg_namespace
+  
+2019-05-03 11:16:25,812 (MainThread): SQL status: SELECT 7 in 0.00 seconds
+2019-05-03 11:16:25,813 (MainThread): 11:16:25 | Concurrency: 1 threads (target='dev')
+2019-05-03 11:16:25,813 (MainThread): 11:16:25 | 
+2019-05-03 11:16:25,815 (Thread-1): 11:16:25 | 1 of 1 START table model dbt_justin.my_first_dbt_model............... [RUN]
+2019-05-03 11:16:25,815 (Thread-1): Compiling model.my_new_package.my_first_dbt_model
+2019-05-03 11:16:25,819 (Thread-1): Writing injected SQL for node "model.my_new_package.my_first_dbt_model"
+2019-05-03 11:16:25,841 (Thread-1): Acquiring new postgres connection "my_first_dbt_model".
+2019-05-03 11:16:25,842 (Thread-1): Re-using an available connection from the pool.
+2019-05-03 11:16:25,842 (Thread-1): Using postgres connection "my_first_dbt_model".
+2019-05-03 11:16:25,842 (Thread-1): On my_first_dbt_model: drop table if exists "practicedb"."dbt_justin"."my_first_dbt_model__dbt_tmp" cascade
+2019-05-03 11:16:25,842 (Thread-1): SQL status: DROP TABLE in 0.00 seconds
+2019-05-03 11:16:25,845 (Thread-1): Using postgres connection "my_first_dbt_model".
+2019-05-03 11:16:25,846 (Thread-1): On my_first_dbt_model: drop view if exists "practicedb"."dbt_justin"."my_first_dbt_model__dbt_backup" cascade
+2019-05-03 11:16:25,846 (Thread-1): SQL status: DROP VIEW in 0.00 seconds
+2019-05-03 11:16:25,862 (Thread-1): Writing runtime SQL for node "model.my_new_package.my_first_dbt_model"
+2019-05-03 11:16:25,862 (Thread-1): Using postgres connection "my_first_dbt_model".
+2019-05-03 11:16:25,862 (Thread-1): On my_first_dbt_model: BEGIN
+2019-05-03 11:16:25,862 (Thread-1): SQL status: BEGIN in 0.00 seconds
+2019-05-03 11:16:25,863 (Thread-1): Using postgres connection "my_first_dbt_model".
+2019-05-03 11:16:25,863 (Thread-1): On my_first_dbt_model: create  table
+    "practicedb"."dbt_justin"."my_first_dbt_model__dbt_tmp"
+  as (
+    -- Welcome to your first dbt model!
+-- Did you know that you can also configure models directly within
+-- the SQL file? This will override configurations stated in dbt_project.yml
+
+-- Try changing 'view' to 'table', then re-running dbt
+
+
+
+select 1 as id
+  );
+2019-05-03 11:16:25,892 (Thread-1): SQL status: SELECT 1 in 0.03 seconds
+2019-05-03 11:16:25,897 (Thread-1): Using postgres connection "my_first_dbt_model".
+2019-05-03 11:16:25,898 (Thread-1): On my_first_dbt_model: alter table "practicedb"."dbt_justin"."my_first_dbt_model" rename to "my_first_dbt_model__dbt_backup"
+2019-05-03 11:16:25,899 (Thread-1): SQL status: ALTER TABLE in 0.00 seconds
+2019-05-03 11:16:25,904 (Thread-1): Using postgres connection "my_first_dbt_model".
+2019-05-03 11:16:25,904 (Thread-1): On my_first_dbt_model: alter table "practicedb"."dbt_justin"."my_first_dbt_model__dbt_tmp" rename to "my_first_dbt_model"
+2019-05-03 11:16:25,904 (Thread-1): SQL status: ALTER TABLE in 0.00 seconds
+2019-05-03 11:16:25,905 (Thread-1): On my_first_dbt_model: COMMIT
+2019-05-03 11:16:25,905 (Thread-1): Using postgres connection "my_first_dbt_model".
+2019-05-03 11:16:25,906 (Thread-1): On my_first_dbt_model: COMMIT
+2019-05-03 11:16:25,906 (Thread-1): SQL status: COMMIT in 0.00 seconds
+2019-05-03 11:16:25,909 (Thread-1): Using postgres connection "my_first_dbt_model".
+2019-05-03 11:16:25,909 (Thread-1): On my_first_dbt_model: drop view if exists "practicedb"."dbt_justin"."my_first_dbt_model__dbt_backup" cascade
+2019-05-03 11:16:25,913 (Thread-1): SQL status: DROP VIEW in 0.00 seconds
+2019-05-03 11:16:25,917 (Thread-1): Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'f8e65d22-2f3a-41d1-86de-d6450c6dc07a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1125ad5f8>]}
+2019-05-03 11:16:26,110 (Thread-1): 11:16:26 | 1 of 1 OK created table model dbt_justin.my_first_dbt_model.......... [SELECT 1 in 0.10s]
+2019-05-03 11:16:26,122 (MainThread): 11:16:26 | 
+2019-05-03 11:16:26,122 (MainThread): 11:16:26 | Finished running 1 table models in 0.66s.
+2019-05-03 11:16:26,127 (MainThread): 
+2019-05-03 11:16:26,127 (MainThread): Completed successfully
+2019-05-03 11:16:26,127 (MainThread): 
+Done. PASS=1 ERROR=0 SKIP=0 TOTAL=1
+2019-05-03 11:16:26,128 (MainThread): Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11255c828>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11255c080>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11255cba8>]}
+2019-05-03 11:16:26,322 (MainThread): Flushing usage events
+2019-05-03 11:18:17,699 (MainThread): Tracking: tracking
+2019-05-03 11:18:17,710 (MainThread): Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10bde96d8>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10bde95c0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10bde95f8>]}
+2019-05-03 11:18:17,987 (MainThread): Parsing macros/core.sql
+2019-05-03 11:18:17,995 (MainThread): Parsing macros/materializations/helpers.sql
+2019-05-03 11:18:18,006 (MainThread): Parsing macros/materializations/seed/seed.sql
+2019-05-03 11:18:18,023 (MainThread): Parsing macros/materializations/incremental/incremental.sql
+2019-05-03 11:18:18,035 (MainThread): Parsing macros/materializations/archive/archive.sql
+2019-05-03 11:18:18,055 (MainThread): Parsing macros/materializations/common/merge.sql
+2019-05-03 11:18:18,061 (MainThread): Parsing macros/materializations/table/table.sql
+2019-05-03 11:18:18,074 (MainThread): Parsing macros/materializations/view/view.sql
+2019-05-03 11:18:18,083 (MainThread): Parsing macros/materializations/view/create_or_replace_view.sql
+2019-05-03 11:18:18,091 (MainThread): Parsing macros/etc/is_incremental.sql
+2019-05-03 11:18:18,094 (MainThread): Parsing macros/etc/datetime.sql
+2019-05-03 11:18:18,103 (MainThread): Parsing macros/etc/get_custom_schema.sql
+2019-05-03 11:18:18,106 (MainThread): Parsing macros/adapters/common.sql
+2019-05-03 11:18:18,136 (MainThread): Parsing macros/schema_tests/relationships.sql
+2019-05-03 11:18:18,138 (MainThread): Parsing macros/schema_tests/not_null.sql
+2019-05-03 11:18:18,140 (MainThread): Parsing macros/schema_tests/unique.sql
+2019-05-03 11:18:18,142 (MainThread): Parsing macros/schema_tests/accepted_values.sql
+2019-05-03 11:18:18,145 (MainThread): Parsing macros/catalog.sql
+2019-05-03 11:18:18,148 (MainThread): Parsing macros/relations.sql
+2019-05-03 11:18:18,151 (MainThread): Parsing macros/adapters.sql
+2019-05-03 11:18:18,169 (MainThread): Parsing model.my_new_package.my_first_dbt_model
+2019-05-03 11:18:18,200 (MainThread): Found 1 models, 0 tests, 0 archives, 0 analyses, 94 macros, 0 operations, 0 seed files, 0 sources
+2019-05-03 11:18:18,201 (MainThread): 
+2019-05-03 11:18:18,213 (MainThread): Parsing macros/core.sql
+2019-05-03 11:18:18,217 (MainThread): Parsing macros/materializations/helpers.sql
+2019-05-03 11:18:18,224 (MainThread): Parsing macros/materializations/seed/seed.sql
+2019-05-03 11:18:18,244 (MainThread): Parsing macros/materializations/incremental/incremental.sql
+2019-05-03 11:18:18,262 (MainThread): Parsing macros/materializations/archive/archive.sql
+2019-05-03 11:18:18,282 (MainThread): Parsing macros/materializations/common/merge.sql
+2019-05-03 11:18:18,288 (MainThread): Parsing macros/materializations/table/table.sql
+2019-05-03 11:18:18,300 (MainThread): Parsing macros/materializations/view/view.sql
+2019-05-03 11:18:18,308 (MainThread): Parsing macros/materializations/view/create_or_replace_view.sql
+2019-05-03 11:18:18,315 (MainThread): Parsing macros/etc/is_incremental.sql
+2019-05-03 11:18:18,317 (MainThread): Parsing macros/etc/datetime.sql
+2019-05-03 11:18:18,326 (MainThread): Parsing macros/etc/get_custom_schema.sql
+2019-05-03 11:18:18,341 (MainThread): Parsing macros/adapters/common.sql
+2019-05-03 11:18:18,371 (MainThread): Parsing macros/schema_tests/relationships.sql
+2019-05-03 11:18:18,373 (MainThread): Parsing macros/schema_tests/not_null.sql
+2019-05-03 11:18:18,374 (MainThread): Parsing macros/schema_tests/unique.sql
+2019-05-03 11:18:18,376 (MainThread): Parsing macros/schema_tests/accepted_values.sql
+2019-05-03 11:18:18,377 (MainThread): Parsing macros/catalog.sql
+2019-05-03 11:18:18,380 (MainThread): Parsing macros/relations.sql
+2019-05-03 11:18:18,381 (MainThread): Parsing macros/adapters.sql
+2019-05-03 11:18:18,483 (MainThread): Acquiring new postgres connection "list_relations_without_caching".
+2019-05-03 11:18:18,483 (MainThread): Opening a new connection, currently in state init
+2019-05-03 11:18:18,523 (MainThread): Using postgres connection "list_relations_without_caching".
+2019-05-03 11:18:18,523 (MainThread): On list_relations_without_caching: BEGIN
+2019-05-03 11:18:18,523 (MainThread): SQL status: BEGIN in 0.00 seconds
+2019-05-03 11:18:18,524 (MainThread): Using postgres connection "list_relations_without_caching".
+2019-05-03 11:18:18,524 (MainThread): On list_relations_without_caching: select
+      'practicedb' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'public'
+    union all
+    select
+      'practicedb' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'public'
+  
+2019-05-03 11:18:18,527 (MainThread): SQL status: SELECT 23 in 0.00 seconds
+2019-05-03 11:18:18,535 (MainThread): On list_relations_without_caching: ROLLBACK
+2019-05-03 11:18:18,554 (MainThread): Acquiring new postgres connection "postgres_get_relations".
+2019-05-03 11:18:18,554 (MainThread): Re-using an available connection from the pool.
+2019-05-03 11:18:18,554 (MainThread): Using postgres connection "postgres_get_relations".
+2019-05-03 11:18:18,554 (MainThread): On postgres_get_relations: BEGIN
+2019-05-03 11:18:18,555 (MainThread): SQL status: BEGIN in 0.00 seconds
+2019-05-03 11:18:18,555 (MainThread): Using postgres connection "postgres_get_relations".
+2019-05-03 11:18:18,555 (MainThread): On postgres_get_relations: -- 
+    -- 
+    with relation as (
+        select
+            pg_rewrite.ev_class as class,
+            pg_rewrite.oid as id
+        from pg_rewrite
+    ),
+    class as (
+        select
+            oid as id,
+            relname as name,
+            relnamespace as schema,
+            relkind as kind
+        from pg_class
+    ),
+    dependency as (
+        select
+            pg_depend.objid as id,
+            pg_depend.refobjid as ref
+        from pg_depend
+    ),
+    schema as (
+        select
+            pg_namespace.oid as id,
+            pg_namespace.nspname as name
+        from pg_namespace
+        where nspname != 'information_schema' and nspname not like 'pg_%'
+    ),
+    referenced as (
+        select
+            relation.id AS id,
+            referenced_class.name ,
+            referenced_class.schema ,
+            referenced_class.kind
+        from relation
+        join class as referenced_class on relation.class=referenced_class.id
+        where referenced_class.kind in ('r', 'v')
+    ),
+    relationships as (
+        select
+            referenced.name as referenced_name,
+            referenced.schema as referenced_schema_id,
+            dependent_class.name as dependent_name,
+            dependent_class.schema as dependent_schema_id,
+            referenced.kind as kind
+        from referenced
+        join dependency on referenced.id=dependency.id
+        join class as dependent_class on dependency.ref=dependent_class.id
+        where
+            (referenced.name != dependent_class.name or
+             referenced.schema != dependent_class.schema)
+    )
+
+    select
+        referenced_schema.name as referenced_schema,
+        relationships.referenced_name as referenced_name,
+        dependent_schema.name as dependent_schema,
+        relationships.dependent_name as dependent_name
+    from relationships
+    join schema as dependent_schema on relationships.dependent_schema_id=dependent_schema.id
+    join schema as referenced_schema on relationships.referenced_schema_id=referenced_schema.id
+    group by referenced_schema, referenced_name, dependent_schema, dependent_name
+    order by referenced_schema, referenced_name, dependent_schema, dependent_name;
+2019-05-03 11:18:18,560 (MainThread): SQL status: SELECT 38 in 0.00 seconds
+2019-05-03 11:18:18,580 (MainThread): On postgres_get_relations: ROLLBACK
+2019-05-03 11:18:18,582 (MainThread): Acquiring new postgres connection "list_schemas".
+2019-05-03 11:18:18,582 (MainThread): Re-using an available connection from the pool.
+2019-05-03 11:18:18,582 (MainThread): Using postgres connection "list_schemas".
+2019-05-03 11:18:18,582 (MainThread): On list_schemas: 
+    select distinct nspname from pg_namespace
+  
+2019-05-03 11:18:18,583 (MainThread): SQL status: SELECT 7 in 0.00 seconds
+2019-05-03 11:18:18,583 (MainThread): 11:18:18 | Concurrency: 1 threads (target='dev')
+2019-05-03 11:18:18,584 (MainThread): 11:18:18 | 
+2019-05-03 11:18:18,588 (Thread-1): 11:18:18 | 1 of 1 START table model public.my_first_dbt_model................... [RUN]
+2019-05-03 11:18:18,589 (Thread-1): Compiling model.my_new_package.my_first_dbt_model
+2019-05-03 11:18:18,594 (Thread-1): Writing injected SQL for node "model.my_new_package.my_first_dbt_model"
+2019-05-03 11:18:18,621 (Thread-1): Acquiring new postgres connection "my_first_dbt_model".
+2019-05-03 11:18:18,621 (Thread-1): Re-using an available connection from the pool.
+2019-05-03 11:18:18,621 (Thread-1): Using postgres connection "my_first_dbt_model".
+2019-05-03 11:18:18,621 (Thread-1): On my_first_dbt_model: drop table if exists "practicedb"."public"."my_first_dbt_model__dbt_tmp" cascade
+2019-05-03 11:18:18,621 (Thread-1): SQL status: DROP TABLE in 0.00 seconds
+2019-05-03 11:18:18,625 (Thread-1): Using postgres connection "my_first_dbt_model".
+2019-05-03 11:18:18,625 (Thread-1): On my_first_dbt_model: drop table if exists "practicedb"."public"."my_first_dbt_model__dbt_backup" cascade
+2019-05-03 11:18:18,625 (Thread-1): SQL status: DROP TABLE in 0.00 seconds
+2019-05-03 11:18:18,640 (Thread-1): Writing runtime SQL for node "model.my_new_package.my_first_dbt_model"
+2019-05-03 11:18:18,641 (Thread-1): Using postgres connection "my_first_dbt_model".
+2019-05-03 11:18:18,641 (Thread-1): On my_first_dbt_model: BEGIN
+2019-05-03 11:18:18,641 (Thread-1): SQL status: BEGIN in 0.00 seconds
+2019-05-03 11:18:18,642 (Thread-1): Using postgres connection "my_first_dbt_model".
+2019-05-03 11:18:18,642 (Thread-1): On my_first_dbt_model: create  table
+    "practicedb"."public"."my_first_dbt_model__dbt_tmp"
+  as (
+    -- Welcome to your first dbt model!
+-- Did you know that you can also configure models directly within
+-- the SQL file? This will override configurations stated in dbt_project.yml
+
+-- Try changing 'view' to 'table', then re-running dbt
+
+
+
+select 1 as id
+  );
+2019-05-03 11:18:18,649 (Thread-1): SQL status: SELECT 1 in 0.01 seconds
+2019-05-03 11:18:18,655 (Thread-1): Using postgres connection "my_first_dbt_model".
+2019-05-03 11:18:18,655 (Thread-1): On my_first_dbt_model: alter table "practicedb"."public"."my_first_dbt_model__dbt_tmp" rename to "my_first_dbt_model"
+2019-05-03 11:18:18,662 (Thread-1): SQL status: ALTER TABLE in 0.01 seconds
+2019-05-03 11:18:18,663 (Thread-1): On my_first_dbt_model: COMMIT
+2019-05-03 11:18:18,663 (Thread-1): Using postgres connection "my_first_dbt_model".
+2019-05-03 11:18:18,663 (Thread-1): On my_first_dbt_model: COMMIT
+2019-05-03 11:18:18,668 (Thread-1): SQL status: COMMIT in 0.00 seconds
+2019-05-03 11:18:18,671 (Thread-1): Using postgres connection "my_first_dbt_model".
+2019-05-03 11:18:18,671 (Thread-1): On my_first_dbt_model: drop table if exists "practicedb"."public"."my_first_dbt_model__dbt_backup" cascade
+2019-05-03 11:18:18,672 (Thread-1): SQL status: DROP TABLE in 0.00 seconds
+2019-05-03 11:18:18,676 (Thread-1): Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '7ab2c42c-d02b-478c-ade3-0a2255ba2b85', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10bee6940>]}
+2019-05-03 11:18:18,870 (Thread-1): 11:18:18 | 1 of 1 OK created table model public.my_first_dbt_model.............. [SELECT 1 in 0.09s]
+2019-05-03 11:18:18,896 (MainThread): 11:18:18 | 
+2019-05-03 11:18:18,896 (MainThread): 11:18:18 | Finished running 1 table models in 0.69s.
+2019-05-03 11:18:18,900 (MainThread): 
+2019-05-03 11:18:18,900 (MainThread): Completed successfully
+2019-05-03 11:18:18,900 (MainThread): 
+Done. PASS=1 ERROR=0 SKIP=0 TOTAL=1
+2019-05-03 11:18:18,901 (MainThread): Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10bf448d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10bf44240>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10bf44518>]}
+2019-05-03 11:18:19,089 (MainThread): Flushing usage events
+2019-05-03 11:22:13,799 (MainThread): Tracking: tracking
+2019-05-03 11:22:13,809 (MainThread): Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x108b38390>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x108b38358>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x108b38518>]}
+2019-05-03 11:22:14,089 (MainThread): Parsing macros/core.sql
+2019-05-03 11:22:14,097 (MainThread): Parsing macros/materializations/helpers.sql
+2019-05-03 11:22:14,107 (MainThread): Parsing macros/materializations/seed/seed.sql
+2019-05-03 11:22:14,127 (MainThread): Parsing macros/materializations/incremental/incremental.sql
+2019-05-03 11:22:14,139 (MainThread): Parsing macros/materializations/archive/archive.sql
+2019-05-03 11:22:14,162 (MainThread): Parsing macros/materializations/common/merge.sql
+2019-05-03 11:22:14,167 (MainThread): Parsing macros/materializations/table/table.sql
+2019-05-03 11:22:14,176 (MainThread): Parsing macros/materializations/view/view.sql
+2019-05-03 11:22:14,184 (MainThread): Parsing macros/materializations/view/create_or_replace_view.sql
+2019-05-03 11:22:14,192 (MainThread): Parsing macros/etc/is_incremental.sql
+2019-05-03 11:22:14,195 (MainThread): Parsing macros/etc/datetime.sql
+2019-05-03 11:22:14,204 (MainThread): Parsing macros/etc/get_custom_schema.sql
+2019-05-03 11:22:14,209 (MainThread): Parsing macros/adapters/common.sql
+2019-05-03 11:22:14,241 (MainThread): Parsing macros/schema_tests/relationships.sql
+2019-05-03 11:22:14,243 (MainThread): Parsing macros/schema_tests/not_null.sql
+2019-05-03 11:22:14,245 (MainThread): Parsing macros/schema_tests/unique.sql
+2019-05-03 11:22:14,247 (MainThread): Parsing macros/schema_tests/accepted_values.sql
+2019-05-03 11:22:14,249 (MainThread): Parsing macros/catalog.sql
+2019-05-03 11:22:14,253 (MainThread): Parsing macros/relations.sql
+2019-05-03 11:22:14,256 (MainThread): Parsing macros/adapters.sql
+2019-05-03 11:22:14,273 (MainThread): Parsing model.my_new_package.my_first_dbt_model
+2019-05-03 11:22:14,306 (MainThread): Found 1 models, 0 tests, 0 archives, 0 analyses, 94 macros, 0 operations, 0 seed files, 0 sources
+2019-05-03 11:22:14,306 (MainThread): 
+2019-05-03 11:22:14,306 (MainThread): 11:22:14 | Concurrency: 1 threads (target='dev')
+2019-05-03 11:22:14,307 (MainThread): 11:22:14 | 
+2019-05-03 11:22:14,309 (Thread-1): Compiling model.my_new_package.my_first_dbt_model
+2019-05-03 11:22:14,313 (Thread-1): Writing injected SQL for node "model.my_new_package.my_first_dbt_model"
+2019-05-03 11:22:14,414 (MainThread): 11:22:14 | Done.
+2019-05-03 11:22:14,414 (MainThread): Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x108c9a5c0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x108c9a240>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x108c9a748>]}
+2019-05-03 11:22:14,607 (MainThread): Flushing usage events
+2019-05-03 12:04:55,090 (MainThread): Tracking: tracking
+2019-05-03 12:04:55,100 (MainThread): Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11029c898>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11029c320>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11029c438>]}
+2019-05-03 12:04:55,371 (MainThread): Parsing macros/core.sql
+2019-05-03 12:04:55,377 (MainThread): Parsing macros/materializations/helpers.sql
+2019-05-03 12:04:55,386 (MainThread): Parsing macros/materializations/seed/seed.sql
+2019-05-03 12:04:55,401 (MainThread): Parsing macros/materializations/incremental/incremental.sql
+2019-05-03 12:04:55,412 (MainThread): Parsing macros/materializations/archive/archive.sql
+2019-05-03 12:04:55,438 (MainThread): Parsing macros/materializations/common/merge.sql
+2019-05-03 12:04:55,443 (MainThread): Parsing macros/materializations/table/table.sql
+2019-05-03 12:04:55,452 (MainThread): Parsing macros/materializations/view/view.sql
+2019-05-03 12:04:55,461 (MainThread): Parsing macros/materializations/view/create_or_replace_view.sql
+2019-05-03 12:04:55,473 (MainThread): Parsing macros/etc/is_incremental.sql
+2019-05-03 12:04:55,476 (MainThread): Parsing macros/etc/datetime.sql
+2019-05-03 12:04:55,486 (MainThread): Parsing macros/etc/get_custom_schema.sql
+2019-05-03 12:04:55,491 (MainThread): Parsing macros/adapters/common.sql
+2019-05-03 12:04:55,525 (MainThread): Parsing macros/schema_tests/relationships.sql
+2019-05-03 12:04:55,527 (MainThread): Parsing macros/schema_tests/not_null.sql
+2019-05-03 12:04:55,529 (MainThread): Parsing macros/schema_tests/unique.sql
+2019-05-03 12:04:55,532 (MainThread): Parsing macros/schema_tests/accepted_values.sql
+2019-05-03 12:04:55,534 (MainThread): Parsing macros/catalog.sql
+2019-05-03 12:04:55,538 (MainThread): Parsing macros/relations.sql
+2019-05-03 12:04:55,542 (MainThread): Parsing macros/adapters.sql
+2019-05-03 12:04:55,560 (MainThread): Parsing model.my_new_package.my_first_dbt_model
+2019-05-03 12:04:55,594 (MainThread): Found 1 models, 0 tests, 0 archives, 0 analyses, 94 macros, 0 operations, 0 seed files, 0 sources
+2019-05-03 12:04:55,594 (MainThread): 
+2019-05-03 12:04:55,606 (MainThread): Parsing macros/core.sql
+2019-05-03 12:04:55,610 (MainThread): Parsing macros/materializations/helpers.sql
+2019-05-03 12:04:55,617 (MainThread): Parsing macros/materializations/seed/seed.sql
+2019-05-03 12:04:55,632 (MainThread): Parsing macros/materializations/incremental/incremental.sql
+2019-05-03 12:04:55,644 (MainThread): Parsing macros/materializations/archive/archive.sql
+2019-05-03 12:04:55,666 (MainThread): Parsing macros/materializations/common/merge.sql
+2019-05-03 12:04:55,670 (MainThread): Parsing macros/materializations/table/table.sql
+2019-05-03 12:04:55,679 (MainThread): Parsing macros/materializations/view/view.sql
+2019-05-03 12:04:55,685 (MainThread): Parsing macros/materializations/view/create_or_replace_view.sql
+2019-05-03 12:04:55,692 (MainThread): Parsing macros/etc/is_incremental.sql
+2019-05-03 12:04:55,694 (MainThread): Parsing macros/etc/datetime.sql
+2019-05-03 12:04:55,701 (MainThread): Parsing macros/etc/get_custom_schema.sql
+2019-05-03 12:04:55,703 (MainThread): Parsing macros/adapters/common.sql
+2019-05-03 12:04:55,730 (MainThread): Parsing macros/schema_tests/relationships.sql
+2019-05-03 12:04:55,731 (MainThread): Parsing macros/schema_tests/not_null.sql
+2019-05-03 12:04:55,733 (MainThread): Parsing macros/schema_tests/unique.sql
+2019-05-03 12:04:55,734 (MainThread): Parsing macros/schema_tests/accepted_values.sql
+2019-05-03 12:04:55,736 (MainThread): Parsing macros/catalog.sql
+2019-05-03 12:04:55,738 (MainThread): Parsing macros/relations.sql
+2019-05-03 12:04:55,740 (MainThread): Parsing macros/adapters.sql
+2019-05-03 12:04:55,841 (MainThread): Acquiring new postgres connection "list_relations_without_caching".
+2019-05-03 12:04:55,841 (MainThread): Opening a new connection, currently in state init
+2019-05-03 12:04:55,854 (MainThread): Using postgres connection "list_relations_without_caching".
+2019-05-03 12:04:55,855 (MainThread): On list_relations_without_caching: BEGIN
+2019-05-03 12:04:55,856 (MainThread): SQL status: BEGIN in 0.00 seconds
+2019-05-03 12:04:55,856 (MainThread): Using postgres connection "list_relations_without_caching".
+2019-05-03 12:04:55,856 (MainThread): On list_relations_without_caching: select
+      'practicedb' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'public'
+    union all
+    select
+      'practicedb' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'public'
+  
+2019-05-03 12:04:55,859 (MainThread): SQL status: SELECT 24 in 0.00 seconds
+2019-05-03 12:04:55,869 (MainThread): On list_relations_without_caching: ROLLBACK
+2019-05-03 12:04:55,889 (MainThread): Acquiring new postgres connection "postgres_get_relations".
+2019-05-03 12:04:55,890 (MainThread): Re-using an available connection from the pool.
+2019-05-03 12:04:55,890 (MainThread): Using postgres connection "postgres_get_relations".
+2019-05-03 12:04:55,890 (MainThread): On postgres_get_relations: BEGIN
+2019-05-03 12:04:55,890 (MainThread): SQL status: BEGIN in 0.00 seconds
+2019-05-03 12:04:55,890 (MainThread): Using postgres connection "postgres_get_relations".
+2019-05-03 12:04:55,890 (MainThread): On postgres_get_relations: -- 
+    -- 
+    with relation as (
+        select
+            pg_rewrite.ev_class as class,
+            pg_rewrite.oid as id
+        from pg_rewrite
+    ),
+    class as (
+        select
+            oid as id,
+            relname as name,
+            relnamespace as schema,
+            relkind as kind
+        from pg_class
+    ),
+    dependency as (
+        select
+            pg_depend.objid as id,
+            pg_depend.refobjid as ref
+        from pg_depend
+    ),
+    schema as (
+        select
+            pg_namespace.oid as id,
+            pg_namespace.nspname as name
+        from pg_namespace
+        where nspname != 'information_schema' and nspname not like 'pg_%'
+    ),
+    referenced as (
+        select
+            relation.id AS id,
+            referenced_class.name ,
+            referenced_class.schema ,
+            referenced_class.kind
+        from relation
+        join class as referenced_class on relation.class=referenced_class.id
+        where referenced_class.kind in ('r', 'v')
+    ),
+    relationships as (
+        select
+            referenced.name as referenced_name,
+            referenced.schema as referenced_schema_id,
+            dependent_class.name as dependent_name,
+            dependent_class.schema as dependent_schema_id,
+            referenced.kind as kind
+        from referenced
+        join dependency on referenced.id=dependency.id
+        join class as dependent_class on dependency.ref=dependent_class.id
+        where
+            (referenced.name != dependent_class.name or
+             referenced.schema != dependent_class.schema)
+    )
+
+    select
+        referenced_schema.name as referenced_schema,
+        relationships.referenced_name as referenced_name,
+        dependent_schema.name as dependent_schema,
+        relationships.dependent_name as dependent_name
+    from relationships
+    join schema as dependent_schema on relationships.dependent_schema_id=dependent_schema.id
+    join schema as referenced_schema on relationships.referenced_schema_id=referenced_schema.id
+    group by referenced_schema, referenced_name, dependent_schema, dependent_name
+    order by referenced_schema, referenced_name, dependent_schema, dependent_name;
+2019-05-03 12:04:55,896 (MainThread): SQL status: SELECT 38 in 0.01 seconds
+2019-05-03 12:04:55,913 (MainThread): On postgres_get_relations: ROLLBACK
+2019-05-03 12:04:55,916 (MainThread): Acquiring new postgres connection "list_schemas".
+2019-05-03 12:04:55,916 (MainThread): Re-using an available connection from the pool.
+2019-05-03 12:04:55,916 (MainThread): Using postgres connection "list_schemas".
+2019-05-03 12:04:55,916 (MainThread): On list_schemas: 
+    select distinct nspname from pg_namespace
+  
+2019-05-03 12:04:55,917 (MainThread): SQL status: SELECT 7 in 0.00 seconds
+2019-05-03 12:04:55,917 (MainThread): 12:04:55 | Concurrency: 1 threads (target='dev')
+2019-05-03 12:04:55,917 (MainThread): 12:04:55 | 
+2019-05-03 12:04:55,922 (Thread-1): 12:04:55 | 1 of 1 START table model public.my_first_dbt_model................... [RUN]
+2019-05-03 12:04:55,922 (Thread-1): Compiling model.my_new_package.my_first_dbt_model
+2019-05-03 12:04:55,926 (Thread-1): Writing injected SQL for node "model.my_new_package.my_first_dbt_model"
+2019-05-03 12:04:55,950 (Thread-1): Acquiring new postgres connection "my_first_dbt_model".
+2019-05-03 12:04:55,950 (Thread-1): Re-using an available connection from the pool.
+2019-05-03 12:04:55,950 (Thread-1): Using postgres connection "my_first_dbt_model".
+2019-05-03 12:04:55,950 (Thread-1): On my_first_dbt_model: drop table if exists "practicedb"."public"."my_first_dbt_model__dbt_tmp" cascade
+2019-05-03 12:04:55,951 (Thread-1): SQL status: DROP TABLE in 0.00 seconds
+2019-05-03 12:04:55,954 (Thread-1): Using postgres connection "my_first_dbt_model".
+2019-05-03 12:04:55,954 (Thread-1): On my_first_dbt_model: drop table if exists "practicedb"."public"."my_first_dbt_model__dbt_backup" cascade
+2019-05-03 12:04:55,954 (Thread-1): SQL status: DROP TABLE in 0.00 seconds
+2019-05-03 12:04:55,971 (Thread-1): Writing runtime SQL for node "model.my_new_package.my_first_dbt_model"
+2019-05-03 12:04:55,974 (Thread-1): Using postgres connection "my_first_dbt_model".
+2019-05-03 12:04:55,974 (Thread-1): On my_first_dbt_model: BEGIN
+2019-05-03 12:04:55,974 (Thread-1): SQL status: BEGIN in 0.00 seconds
+2019-05-03 12:04:55,975 (Thread-1): Using postgres connection "my_first_dbt_model".
+2019-05-03 12:04:55,975 (Thread-1): On my_first_dbt_model: create  table
+    "practicedb"."public"."my_first_dbt_model__dbt_tmp"
+  as (
+    -- Welcome to your first dbt model!
+-- Did you know that you can also configure models directly within
+-- the SQL file? This will override configurations stated in dbt_project.yml
+
+-- Try changing 'view' to 'table', then re-running dbt
+
+
+
+select 1 as id
+  );
+2019-05-03 12:04:56,007 (Thread-1): SQL status: SELECT 1 in 0.03 seconds
+2019-05-03 12:04:56,014 (Thread-1): Using postgres connection "my_first_dbt_model".
+2019-05-03 12:04:56,014 (Thread-1): On my_first_dbt_model: alter table "practicedb"."public"."my_first_dbt_model" rename to "my_first_dbt_model__dbt_backup"
+2019-05-03 12:04:56,015 (Thread-1): SQL status: ALTER TABLE in 0.00 seconds
+2019-05-03 12:04:56,022 (Thread-1): Using postgres connection "my_first_dbt_model".
+2019-05-03 12:04:56,022 (Thread-1): On my_first_dbt_model: alter table "practicedb"."public"."my_first_dbt_model__dbt_tmp" rename to "my_first_dbt_model"
+2019-05-03 12:04:56,023 (Thread-1): SQL status: ALTER TABLE in 0.00 seconds
+2019-05-03 12:04:56,024 (Thread-1): On my_first_dbt_model: COMMIT
+2019-05-03 12:04:56,024 (Thread-1): Using postgres connection "my_first_dbt_model".
+2019-05-03 12:04:56,024 (Thread-1): On my_first_dbt_model: COMMIT
+2019-05-03 12:04:56,024 (Thread-1): SQL status: COMMIT in 0.00 seconds
+2019-05-03 12:04:56,027 (Thread-1): Using postgres connection "my_first_dbt_model".
+2019-05-03 12:04:56,027 (Thread-1): On my_first_dbt_model: drop table if exists "practicedb"."public"."my_first_dbt_model__dbt_backup" cascade
+2019-05-03 12:04:56,030 (Thread-1): SQL status: DROP TABLE in 0.00 seconds
+2019-05-03 12:04:56,037 (Thread-1): Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '3bf57b21-eb86-4f0c-8824-205be96ebca3', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x110c1f048>]}
+2019-05-03 12:04:56,235 (Thread-1): 12:04:56 | 1 of 1 OK created table model public.my_first_dbt_model.............. [SELECT 1 in 0.11s]
+2019-05-03 12:04:56,338 (MainThread): 12:04:56 | 
+2019-05-03 12:04:56,339 (MainThread): 12:04:56 | Finished running 1 table models in 0.74s.
+2019-05-03 12:04:56,343 (MainThread): 
+2019-05-03 12:04:56,343 (MainThread): Completed successfully
+2019-05-03 12:04:56,343 (MainThread): 
+Done. PASS=1 ERROR=0 SKIP=0 TOTAL=1
+2019-05-03 12:04:56,343 (MainThread): Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x110c2f780>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x110c2d780>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x110c2d6a0>]}
+2019-05-03 12:04:56,534 (MainThread): Flushing usage events
+2019-05-03 12:05:27,557 (MainThread): Tracking: tracking
+2019-05-03 12:05:27,562 (MainThread): Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10b03a588>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10b03a320>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10b03a3c8>]}
+2019-05-03 12:05:27,780 (MainThread): Parsing macros/core.sql
+2019-05-03 12:05:27,785 (MainThread): Parsing macros/materializations/helpers.sql
+2019-05-03 12:05:27,791 (MainThread): Parsing macros/materializations/seed/seed.sql
+2019-05-03 12:05:27,807 (MainThread): Parsing macros/materializations/incremental/incremental.sql
+2019-05-03 12:05:27,817 (MainThread): Parsing macros/materializations/archive/archive.sql
+2019-05-03 12:05:27,837 (MainThread): Parsing macros/materializations/common/merge.sql
+2019-05-03 12:05:27,841 (MainThread): Parsing macros/materializations/table/table.sql
+2019-05-03 12:05:27,849 (MainThread): Parsing macros/materializations/view/view.sql
+2019-05-03 12:05:27,858 (MainThread): Parsing macros/materializations/view/create_or_replace_view.sql
+2019-05-03 12:05:27,866 (MainThread): Parsing macros/etc/is_incremental.sql
+2019-05-03 12:05:27,868 (MainThread): Parsing macros/etc/datetime.sql
+2019-05-03 12:05:27,875 (MainThread): Parsing macros/etc/get_custom_schema.sql
+2019-05-03 12:05:27,877 (MainThread): Parsing macros/adapters/common.sql
+2019-05-03 12:05:27,904 (MainThread): Parsing macros/schema_tests/relationships.sql
+2019-05-03 12:05:27,906 (MainThread): Parsing macros/schema_tests/not_null.sql
+2019-05-03 12:05:27,907 (MainThread): Parsing macros/schema_tests/unique.sql
+2019-05-03 12:05:27,909 (MainThread): Parsing macros/schema_tests/accepted_values.sql
+2019-05-03 12:05:27,912 (MainThread): Parsing macros/catalog.sql
+2019-05-03 12:05:27,915 (MainThread): Parsing macros/relations.sql
+2019-05-03 12:05:27,917 (MainThread): Parsing macros/adapters.sql
+2019-05-03 12:05:27,933 (MainThread): Parsing model.my_new_package.my_first_dbt_model
+2019-05-03 12:05:27,953 (MainThread): Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10b1bcbe0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10b1bc668>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10b1bc470>]}
+2019-05-03 12:05:28,144 (MainThread): Flushing usage events
+2019-05-03 12:05:28,144 (MainThread): Encountered an error:
+2019-05-03 12:05:28,144 (MainThread): Compilation Error in model my_first_dbt_model (models/example/my_first_dbt_model.sql)
+  Model 'model.my_new_package.my_first_dbt_model' depends on model 'actor' which was not found or is disabled
+2019-05-03 12:05:28,156 (MainThread): Traceback (most recent call last):
+  File "/usr/local/Cellar/dbt/0.13.0/libexec/lib/python3.7/site-packages/dbt/main.py", line 79, in main
+    results, succeeded = handle_and_check(args)
+  File "/usr/local/Cellar/dbt/0.13.0/libexec/lib/python3.7/site-packages/dbt/main.py", line 153, in handle_and_check
+    task, res = run_from_args(parsed)
+  File "/usr/local/Cellar/dbt/0.13.0/libexec/lib/python3.7/site-packages/dbt/main.py", line 209, in run_from_args
+    results = run_from_task(task, cfg, parsed)
+  File "/usr/local/Cellar/dbt/0.13.0/libexec/lib/python3.7/site-packages/dbt/main.py", line 217, in run_from_task
+    result = task.run()
+  File "/usr/local/Cellar/dbt/0.13.0/libexec/lib/python3.7/site-packages/dbt/task/runnable.py", line 242, in run
+    self._runtime_initialize()
+  File "/usr/local/Cellar/dbt/0.13.0/libexec/lib/python3.7/site-packages/dbt/task/runnable.py", line 50, in _runtime_initialize
+    self.manifest = load_manifest(self.config)
+  File "/usr/local/Cellar/dbt/0.13.0/libexec/lib/python3.7/site-packages/dbt/task/runnable.py", line 29, in load_manifest
+    internal_manifest=internal_manifest)
+  File "/usr/local/Cellar/dbt/0.13.0/libexec/lib/python3.7/site-packages/dbt/loader.py", line 173, in load_all
+    internal_manifest)
+  File "/usr/local/Cellar/dbt/0.13.0/libexec/lib/python3.7/site-packages/dbt/loader.py", line 167, in _load_from_projects
+    return loader.create_manifest()
+  File "/usr/local/Cellar/dbt/0.13.0/libexec/lib/python3.7/site-packages/dbt/loader.py", line 156, in create_manifest
+    self.root_project.project_name)
+  File "/usr/local/Cellar/dbt/0.13.0/libexec/lib/python3.7/site-packages/dbt/parser/util.py", line 184, in process_refs
+    disabled=(target_model is cls.DISABLED)
+  File "/usr/local/Cellar/dbt/0.13.0/libexec/lib/python3.7/site-packages/dbt/utils.py", line 403, in invalid_ref_fail_unless_test
+    target_model_package)
+  File "/usr/local/Cellar/dbt/0.13.0/libexec/lib/python3.7/site-packages/dbt/exceptions.py", line 334, in ref_target_not_found
+    raise_compiler_error(msg, model)
+  File "/usr/local/Cellar/dbt/0.13.0/libexec/lib/python3.7/site-packages/dbt/exceptions.py", line 215, in raise_compiler_error
+    raise CompilationException(msg, node)
+dbt.exceptions.CompilationException: Compilation Error in model my_first_dbt_model (models/example/my_first_dbt_model.sql)
+  Model 'model.my_new_package.my_first_dbt_model' depends on model 'actor' which was not found or is disabled
+
+2019-05-03 12:09:44,800 (MainThread): Tracking: tracking
+2019-05-03 12:09:44,810 (MainThread): Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x105a6d898>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x105a6d2e8>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x105a6d390>]}
+2019-05-03 12:09:45,078 (MainThread): Parsing macros/core.sql
+2019-05-03 12:09:45,083 (MainThread): Parsing macros/materializations/helpers.sql
+2019-05-03 12:09:45,091 (MainThread): Parsing macros/materializations/seed/seed.sql
+2019-05-03 12:09:45,109 (MainThread): Parsing macros/materializations/incremental/incremental.sql
+2019-05-03 12:09:45,121 (MainThread): Parsing macros/materializations/archive/archive.sql
+2019-05-03 12:09:45,146 (MainThread): Parsing macros/materializations/common/merge.sql
+2019-05-03 12:09:45,152 (MainThread): Parsing macros/materializations/table/table.sql
+2019-05-03 12:09:45,163 (MainThread): Parsing macros/materializations/view/view.sql
+2019-05-03 12:09:45,171 (MainThread): Parsing macros/materializations/view/create_or_replace_view.sql
+2019-05-03 12:09:45,181 (MainThread): Parsing macros/etc/is_incremental.sql
+2019-05-03 12:09:45,184 (MainThread): Parsing macros/etc/datetime.sql
+2019-05-03 12:09:45,195 (MainThread): Parsing macros/etc/get_custom_schema.sql
+2019-05-03 12:09:45,200 (MainThread): Parsing macros/adapters/common.sql
+2019-05-03 12:09:45,234 (MainThread): Parsing macros/schema_tests/relationships.sql
+2019-05-03 12:09:45,236 (MainThread): Parsing macros/schema_tests/not_null.sql
+2019-05-03 12:09:45,238 (MainThread): Parsing macros/schema_tests/unique.sql
+2019-05-03 12:09:45,241 (MainThread): Parsing macros/schema_tests/accepted_values.sql
+2019-05-03 12:09:45,243 (MainThread): Parsing macros/catalog.sql
+2019-05-03 12:09:45,247 (MainThread): Parsing macros/relations.sql
+2019-05-03 12:09:45,250 (MainThread): Parsing macros/adapters.sql
+2019-05-03 12:09:45,266 (MainThread): Parsing model.my_new_package.my_first_dbt_model
+2019-05-03 12:09:45,295 (MainThread): Found 1 models, 0 tests, 0 archives, 0 analyses, 94 macros, 0 operations, 0 seed files, 0 sources
+2019-05-03 12:09:45,296 (MainThread): 
+2019-05-03 12:09:45,309 (MainThread): Parsing macros/core.sql
+2019-05-03 12:09:45,314 (MainThread): Parsing macros/materializations/helpers.sql
+2019-05-03 12:09:45,322 (MainThread): Parsing macros/materializations/seed/seed.sql
+2019-05-03 12:09:45,337 (MainThread): Parsing macros/materializations/incremental/incremental.sql
+2019-05-03 12:09:45,346 (MainThread): Parsing macros/materializations/archive/archive.sql
+2019-05-03 12:09:45,371 (MainThread): Parsing macros/materializations/common/merge.sql
+2019-05-03 12:09:45,377 (MainThread): Parsing macros/materializations/table/table.sql
+2019-05-03 12:09:45,386 (MainThread): Parsing macros/materializations/view/view.sql
+2019-05-03 12:09:45,393 (MainThread): Parsing macros/materializations/view/create_or_replace_view.sql
+2019-05-03 12:09:45,399 (MainThread): Parsing macros/etc/is_incremental.sql
+2019-05-03 12:09:45,401 (MainThread): Parsing macros/etc/datetime.sql
+2019-05-03 12:09:45,408 (MainThread): Parsing macros/etc/get_custom_schema.sql
+2019-05-03 12:09:45,410 (MainThread): Parsing macros/adapters/common.sql
+2019-05-03 12:09:45,443 (MainThread): Parsing macros/schema_tests/relationships.sql
+2019-05-03 12:09:45,445 (MainThread): Parsing macros/schema_tests/not_null.sql
+2019-05-03 12:09:45,446 (MainThread): Parsing macros/schema_tests/unique.sql
+2019-05-03 12:09:45,447 (MainThread): Parsing macros/schema_tests/accepted_values.sql
+2019-05-03 12:09:45,449 (MainThread): Parsing macros/catalog.sql
+2019-05-03 12:09:45,451 (MainThread): Parsing macros/relations.sql
+2019-05-03 12:09:45,453 (MainThread): Parsing macros/adapters.sql
+2019-05-03 12:09:45,554 (MainThread): Acquiring new postgres connection "list_relations_without_caching".
+2019-05-03 12:09:45,554 (MainThread): Opening a new connection, currently in state init
+2019-05-03 12:09:45,591 (MainThread): Using postgres connection "list_relations_without_caching".
+2019-05-03 12:09:45,591 (MainThread): On list_relations_without_caching: BEGIN
+2019-05-03 12:09:45,593 (MainThread): SQL status: BEGIN in 0.00 seconds
+2019-05-03 12:09:45,593 (MainThread): Using postgres connection "list_relations_without_caching".
+2019-05-03 12:09:45,593 (MainThread): On list_relations_without_caching: select
+      'practicedb' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'public'
+    union all
+    select
+      'practicedb' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'public'
+  
+2019-05-03 12:09:45,596 (MainThread): SQL status: SELECT 24 in 0.00 seconds
+2019-05-03 12:09:45,606 (MainThread): On list_relations_without_caching: ROLLBACK
+2019-05-03 12:09:45,625 (MainThread): Acquiring new postgres connection "postgres_get_relations".
+2019-05-03 12:09:45,625 (MainThread): Re-using an available connection from the pool.
+2019-05-03 12:09:45,625 (MainThread): Using postgres connection "postgres_get_relations".
+2019-05-03 12:09:45,625 (MainThread): On postgres_get_relations: BEGIN
+2019-05-03 12:09:45,625 (MainThread): SQL status: BEGIN in 0.00 seconds
+2019-05-03 12:09:45,626 (MainThread): Using postgres connection "postgres_get_relations".
+2019-05-03 12:09:45,626 (MainThread): On postgres_get_relations: -- 
+    -- 
+    with relation as (
+        select
+            pg_rewrite.ev_class as class,
+            pg_rewrite.oid as id
+        from pg_rewrite
+    ),
+    class as (
+        select
+            oid as id,
+            relname as name,
+            relnamespace as schema,
+            relkind as kind
+        from pg_class
+    ),
+    dependency as (
+        select
+            pg_depend.objid as id,
+            pg_depend.refobjid as ref
+        from pg_depend
+    ),
+    schema as (
+        select
+            pg_namespace.oid as id,
+            pg_namespace.nspname as name
+        from pg_namespace
+        where nspname != 'information_schema' and nspname not like 'pg_%'
+    ),
+    referenced as (
+        select
+            relation.id AS id,
+            referenced_class.name ,
+            referenced_class.schema ,
+            referenced_class.kind
+        from relation
+        join class as referenced_class on relation.class=referenced_class.id
+        where referenced_class.kind in ('r', 'v')
+    ),
+    relationships as (
+        select
+            referenced.name as referenced_name,
+            referenced.schema as referenced_schema_id,
+            dependent_class.name as dependent_name,
+            dependent_class.schema as dependent_schema_id,
+            referenced.kind as kind
+        from referenced
+        join dependency on referenced.id=dependency.id
+        join class as dependent_class on dependency.ref=dependent_class.id
+        where
+            (referenced.name != dependent_class.name or
+             referenced.schema != dependent_class.schema)
+    )
+
+    select
+        referenced_schema.name as referenced_schema,
+        relationships.referenced_name as referenced_name,
+        dependent_schema.name as dependent_schema,
+        relationships.dependent_name as dependent_name
+    from relationships
+    join schema as dependent_schema on relationships.dependent_schema_id=dependent_schema.id
+    join schema as referenced_schema on relationships.referenced_schema_id=referenced_schema.id
+    group by referenced_schema, referenced_name, dependent_schema, dependent_name
+    order by referenced_schema, referenced_name, dependent_schema, dependent_name;
+2019-05-03 12:09:45,630 (MainThread): SQL status: SELECT 38 in 0.00 seconds
+2019-05-03 12:09:45,648 (MainThread): On postgres_get_relations: ROLLBACK
+2019-05-03 12:09:45,651 (MainThread): Acquiring new postgres connection "list_schemas".
+2019-05-03 12:09:45,651 (MainThread): Re-using an available connection from the pool.
+2019-05-03 12:09:45,651 (MainThread): Using postgres connection "list_schemas".
+2019-05-03 12:09:45,651 (MainThread): On list_schemas: 
+    select distinct nspname from pg_namespace
+  
+2019-05-03 12:09:45,651 (MainThread): SQL status: SELECT 7 in 0.00 seconds
+2019-05-03 12:09:45,652 (MainThread): 12:09:45 | Concurrency: 1 threads (target='dev')
+2019-05-03 12:09:45,652 (MainThread): 12:09:45 | 
+2019-05-03 12:09:45,656 (Thread-1): 12:09:45 | 1 of 1 START view model public.my_first_dbt_model.................... [RUN]
+2019-05-03 12:09:45,656 (Thread-1): Compiling model.my_new_package.my_first_dbt_model
+2019-05-03 12:09:45,661 (Thread-1): Writing injected SQL for node "model.my_new_package.my_first_dbt_model"
+2019-05-03 12:09:45,700 (Thread-1): Acquiring new postgres connection "my_first_dbt_model".
+2019-05-03 12:09:45,701 (Thread-1): Re-using an available connection from the pool.
+2019-05-03 12:09:45,701 (Thread-1): Using postgres connection "my_first_dbt_model".
+2019-05-03 12:09:45,701 (Thread-1): On my_first_dbt_model: drop view if exists "practicedb"."public"."my_first_dbt_model__dbt_tmp" cascade
+2019-05-03 12:09:45,701 (Thread-1): SQL status: DROP VIEW in 0.00 seconds
+2019-05-03 12:09:45,704 (Thread-1): Using postgres connection "my_first_dbt_model".
+2019-05-03 12:09:45,704 (Thread-1): On my_first_dbt_model: drop table if exists "practicedb"."public"."my_first_dbt_model__dbt_backup" cascade
+2019-05-03 12:09:45,704 (Thread-1): SQL status: DROP TABLE in 0.00 seconds
+2019-05-03 12:09:45,706 (Thread-1): Writing runtime SQL for node "model.my_new_package.my_first_dbt_model"
+2019-05-03 12:09:45,707 (Thread-1): Using postgres connection "my_first_dbt_model".
+2019-05-03 12:09:45,707 (Thread-1): On my_first_dbt_model: BEGIN
+2019-05-03 12:09:45,707 (Thread-1): SQL status: BEGIN in 0.00 seconds
+2019-05-03 12:09:45,707 (Thread-1): Using postgres connection "my_first_dbt_model".
+2019-05-03 12:09:45,707 (Thread-1): On my_first_dbt_model: create view "practicedb"."public"."my_first_dbt_model__dbt_tmp" as (
+    -- Welcome to your first dbt model!
+-- Did you know that you can also configure models directly within
+-- the SQL file? This will override configurations stated in dbt_project.yml
+
+-- Try changing 'view' to 'table', then re-running dbt
+
+
+
+select * from public.actor
+  );
+2019-05-03 12:09:45,721 (Thread-1): SQL status: CREATE VIEW in 0.01 seconds
+2019-05-03 12:09:45,726 (Thread-1): Using postgres connection "my_first_dbt_model".
+2019-05-03 12:09:45,726 (Thread-1): On my_first_dbt_model: alter table "practicedb"."public"."my_first_dbt_model" rename to "my_first_dbt_model__dbt_backup"
+2019-05-03 12:09:45,727 (Thread-1): SQL status: ALTER TABLE in 0.00 seconds
+2019-05-03 12:09:45,731 (Thread-1): Using postgres connection "my_first_dbt_model".
+2019-05-03 12:09:45,731 (Thread-1): On my_first_dbt_model: alter table "practicedb"."public"."my_first_dbt_model__dbt_tmp" rename to "my_first_dbt_model"
+2019-05-03 12:09:45,731 (Thread-1): SQL status: ALTER TABLE in 0.00 seconds
+2019-05-03 12:09:45,732 (Thread-1): On my_first_dbt_model: COMMIT
+2019-05-03 12:09:45,732 (Thread-1): Using postgres connection "my_first_dbt_model".
+2019-05-03 12:09:45,732 (Thread-1): On my_first_dbt_model: COMMIT
+2019-05-03 12:09:45,738 (Thread-1): SQL status: COMMIT in 0.01 seconds
+2019-05-03 12:09:45,743 (Thread-1): Using postgres connection "my_first_dbt_model".
+2019-05-03 12:09:45,743 (Thread-1): On my_first_dbt_model: drop table if exists "practicedb"."public"."my_first_dbt_model__dbt_backup" cascade
+2019-05-03 12:09:45,744 (Thread-1): SQL status: DROP TABLE in 0.00 seconds
+2019-05-03 12:09:45,750 (Thread-1): Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '4facb32d-0958-483c-b64e-c5f65d28a3f8', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106401048>]}
+2019-05-03 12:09:45,945 (Thread-1): 12:09:45 | 1 of 1 OK created view model public.my_first_dbt_model............... [CREATE VIEW in 0.09s]
+2019-05-03 12:09:45,970 (MainThread): 12:09:45 | 
+2019-05-03 12:09:45,971 (MainThread): 12:09:45 | Finished running 1 view models in 0.67s.
+2019-05-03 12:09:45,975 (MainThread): 
+2019-05-03 12:09:45,975 (MainThread): Completed successfully
+2019-05-03 12:09:45,975 (MainThread): 
+Done. PASS=1 ERROR=0 SKIP=0 TOTAL=1
+2019-05-03 12:09:45,976 (MainThread): Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106404400>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106404278>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106404e48>]}
+2019-05-03 12:09:46,160 (MainThread): Flushing usage events
+2019-05-03 12:13:03,551 (MainThread): Tracking: tracking
+2019-05-03 12:13:03,561 (MainThread): Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10c15ab70>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10c15a278>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10c15a668>]}
+2019-05-03 12:13:03,844 (MainThread): Parsing macros/core.sql
+2019-05-03 12:13:03,850 (MainThread): Parsing macros/materializations/helpers.sql
+2019-05-03 12:13:03,859 (MainThread): Parsing macros/materializations/seed/seed.sql
+2019-05-03 12:13:03,879 (MainThread): Parsing macros/materializations/incremental/incremental.sql
+2019-05-03 12:13:03,889 (MainThread): Parsing macros/materializations/archive/archive.sql
+2019-05-03 12:13:03,915 (MainThread): Parsing macros/materializations/common/merge.sql
+2019-05-03 12:13:03,921 (MainThread): Parsing macros/materializations/table/table.sql
+2019-05-03 12:13:03,933 (MainThread): Parsing macros/materializations/view/view.sql
+2019-05-03 12:13:03,941 (MainThread): Parsing macros/materializations/view/create_or_replace_view.sql
+2019-05-03 12:13:03,949 (MainThread): Parsing macros/etc/is_incremental.sql
+2019-05-03 12:13:03,952 (MainThread): Parsing macros/etc/datetime.sql
+2019-05-03 12:13:03,963 (MainThread): Parsing macros/etc/get_custom_schema.sql
+2019-05-03 12:13:03,966 (MainThread): Parsing macros/adapters/common.sql
+2019-05-03 12:13:03,997 (MainThread): Parsing macros/schema_tests/relationships.sql
+2019-05-03 12:13:03,999 (MainThread): Parsing macros/schema_tests/not_null.sql
+2019-05-03 12:13:04,001 (MainThread): Parsing macros/schema_tests/unique.sql
+2019-05-03 12:13:04,002 (MainThread): Parsing macros/schema_tests/accepted_values.sql
+2019-05-03 12:13:04,005 (MainThread): Parsing macros/catalog.sql
+2019-05-03 12:13:04,008 (MainThread): Parsing macros/relations.sql
+2019-05-03 12:13:04,010 (MainThread): Parsing macros/adapters.sql
+2019-05-03 12:13:04,027 (MainThread): Parsing model.my_new_package.my_first_dbt_model
+2019-05-03 12:13:04,058 (MainThread): Found 1 models, 0 tests, 0 archives, 0 analyses, 94 macros, 0 operations, 0 seed files, 0 sources
+2019-05-03 12:13:04,059 (MainThread): 
+2019-05-03 12:13:04,059 (MainThread): 12:13:04 | Concurrency: 1 threads (target='dev')
+2019-05-03 12:13:04,059 (MainThread): 12:13:04 | 
+2019-05-03 12:13:04,061 (Thread-1): Compiling model.my_new_package.my_first_dbt_model
+2019-05-03 12:13:04,065 (Thread-1): Writing injected SQL for node "model.my_new_package.my_first_dbt_model"
+2019-05-03 12:13:04,165 (MainThread): 12:13:04 | Done.
+2019-05-03 12:13:04,165 (MainThread): Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10c2c1d30>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10c2c14e0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10c2c17f0>]}
+2019-05-03 12:13:04,361 (MainThread): Flushing usage events
+2019-05-03 12:15:13,942 (MainThread): Tracking: tracking
+2019-05-03 12:15:13,952 (MainThread): Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10a5e3d68>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10a5e3e48>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10a5f17b8>]}
+2019-05-03 12:15:14,220 (MainThread): Parsing macros/core.sql
+2019-05-03 12:15:14,227 (MainThread): Parsing macros/materializations/helpers.sql
+2019-05-03 12:15:14,236 (MainThread): Parsing macros/materializations/seed/seed.sql
+2019-05-03 12:15:14,252 (MainThread): Parsing macros/materializations/incremental/incremental.sql
+2019-05-03 12:15:14,266 (MainThread): Parsing macros/materializations/archive/archive.sql
+2019-05-03 12:15:14,288 (MainThread): Parsing macros/materializations/common/merge.sql
+2019-05-03 12:15:14,293 (MainThread): Parsing macros/materializations/table/table.sql
+2019-05-03 12:15:14,302 (MainThread): Parsing macros/materializations/view/view.sql
+2019-05-03 12:15:14,310 (MainThread): Parsing macros/materializations/view/create_or_replace_view.sql
+2019-05-03 12:15:14,317 (MainThread): Parsing macros/etc/is_incremental.sql
+2019-05-03 12:15:14,319 (MainThread): Parsing macros/etc/datetime.sql
+2019-05-03 12:15:14,327 (MainThread): Parsing macros/etc/get_custom_schema.sql
+2019-05-03 12:15:14,330 (MainThread): Parsing macros/adapters/common.sql
+2019-05-03 12:15:14,358 (MainThread): Parsing macros/schema_tests/relationships.sql
+2019-05-03 12:15:14,360 (MainThread): Parsing macros/schema_tests/not_null.sql
+2019-05-03 12:15:14,362 (MainThread): Parsing macros/schema_tests/unique.sql
+2019-05-03 12:15:14,365 (MainThread): Parsing macros/schema_tests/accepted_values.sql
+2019-05-03 12:15:14,367 (MainThread): Parsing macros/catalog.sql
+2019-05-03 12:15:14,371 (MainThread): Parsing macros/relations.sql
+2019-05-03 12:15:14,374 (MainThread): Parsing macros/adapters.sql
+2019-05-03 12:15:14,391 (MainThread): Parsing model.my_new_package.my_first_dbt_model
+2019-05-03 12:15:14,424 (MainThread): Found 1 models, 0 tests, 0 archives, 0 analyses, 94 macros, 0 operations, 0 seed files, 0 sources
+2019-05-03 12:15:14,425 (MainThread): 
+2019-05-03 12:15:14,439 (MainThread): Parsing macros/core.sql
+2019-05-03 12:15:14,445 (MainThread): Parsing macros/materializations/helpers.sql
+2019-05-03 12:15:14,452 (MainThread): Parsing macros/materializations/seed/seed.sql
+2019-05-03 12:15:14,467 (MainThread): Parsing macros/materializations/incremental/incremental.sql
+2019-05-03 12:15:14,478 (MainThread): Parsing macros/materializations/archive/archive.sql
+2019-05-03 12:15:14,502 (MainThread): Parsing macros/materializations/common/merge.sql
+2019-05-03 12:15:14,508 (MainThread): Parsing macros/materializations/table/table.sql
+2019-05-03 12:15:14,517 (MainThread): Parsing macros/materializations/view/view.sql
+2019-05-03 12:15:14,524 (MainThread): Parsing macros/materializations/view/create_or_replace_view.sql
+2019-05-03 12:15:14,530 (MainThread): Parsing macros/etc/is_incremental.sql
+2019-05-03 12:15:14,532 (MainThread): Parsing macros/etc/datetime.sql
+2019-05-03 12:15:14,544 (MainThread): Parsing macros/etc/get_custom_schema.sql
+2019-05-03 12:15:14,547 (MainThread): Parsing macros/adapters/common.sql
+2019-05-03 12:15:14,587 (MainThread): Parsing macros/schema_tests/relationships.sql
+2019-05-03 12:15:14,589 (MainThread): Parsing macros/schema_tests/not_null.sql
+2019-05-03 12:15:14,590 (MainThread): Parsing macros/schema_tests/unique.sql
+2019-05-03 12:15:14,592 (MainThread): Parsing macros/schema_tests/accepted_values.sql
+2019-05-03 12:15:14,595 (MainThread): Parsing macros/catalog.sql
+2019-05-03 12:15:14,598 (MainThread): Parsing macros/relations.sql
+2019-05-03 12:15:14,600 (MainThread): Parsing macros/adapters.sql
+2019-05-03 12:15:14,709 (MainThread): Acquiring new postgres connection "list_relations_without_caching".
+2019-05-03 12:15:14,709 (MainThread): Opening a new connection, currently in state init
+2019-05-03 12:15:14,738 (MainThread): Using postgres connection "list_relations_without_caching".
+2019-05-03 12:15:14,739 (MainThread): On list_relations_without_caching: BEGIN
+2019-05-03 12:15:14,739 (MainThread): SQL status: BEGIN in 0.00 seconds
+2019-05-03 12:15:14,740 (MainThread): Using postgres connection "list_relations_without_caching".
+2019-05-03 12:15:14,740 (MainThread): On list_relations_without_caching: select
+      'practicedb' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'public'
+    union all
+    select
+      'practicedb' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'public'
+  
+2019-05-03 12:15:14,743 (MainThread): SQL status: SELECT 24 in 0.00 seconds
+2019-05-03 12:15:14,753 (MainThread): On list_relations_without_caching: ROLLBACK
+2019-05-03 12:15:14,771 (MainThread): Acquiring new postgres connection "postgres_get_relations".
+2019-05-03 12:15:14,771 (MainThread): Re-using an available connection from the pool.
+2019-05-03 12:15:14,771 (MainThread): Using postgres connection "postgres_get_relations".
+2019-05-03 12:15:14,771 (MainThread): On postgres_get_relations: BEGIN
+2019-05-03 12:15:14,771 (MainThread): SQL status: BEGIN in 0.00 seconds
+2019-05-03 12:15:14,772 (MainThread): Using postgres connection "postgres_get_relations".
+2019-05-03 12:15:14,772 (MainThread): On postgres_get_relations: -- 
+    -- 
+    with relation as (
+        select
+            pg_rewrite.ev_class as class,
+            pg_rewrite.oid as id
+        from pg_rewrite
+    ),
+    class as (
+        select
+            oid as id,
+            relname as name,
+            relnamespace as schema,
+            relkind as kind
+        from pg_class
+    ),
+    dependency as (
+        select
+            pg_depend.objid as id,
+            pg_depend.refobjid as ref
+        from pg_depend
+    ),
+    schema as (
+        select
+            pg_namespace.oid as id,
+            pg_namespace.nspname as name
+        from pg_namespace
+        where nspname != 'information_schema' and nspname not like 'pg_%'
+    ),
+    referenced as (
+        select
+            relation.id AS id,
+            referenced_class.name ,
+            referenced_class.schema ,
+            referenced_class.kind
+        from relation
+        join class as referenced_class on relation.class=referenced_class.id
+        where referenced_class.kind in ('r', 'v')
+    ),
+    relationships as (
+        select
+            referenced.name as referenced_name,
+            referenced.schema as referenced_schema_id,
+            dependent_class.name as dependent_name,
+            dependent_class.schema as dependent_schema_id,
+            referenced.kind as kind
+        from referenced
+        join dependency on referenced.id=dependency.id
+        join class as dependent_class on dependency.ref=dependent_class.id
+        where
+            (referenced.name != dependent_class.name or
+             referenced.schema != dependent_class.schema)
+    )
+
+    select
+        referenced_schema.name as referenced_schema,
+        relationships.referenced_name as referenced_name,
+        dependent_schema.name as dependent_schema,
+        relationships.dependent_name as dependent_name
+    from relationships
+    join schema as dependent_schema on relationships.dependent_schema_id=dependent_schema.id
+    join schema as referenced_schema on relationships.referenced_schema_id=referenced_schema.id
+    group by referenced_schema, referenced_name, dependent_schema, dependent_name
+    order by referenced_schema, referenced_name, dependent_schema, dependent_name;
+2019-05-03 12:15:14,776 (MainThread): SQL status: SELECT 39 in 0.00 seconds
+2019-05-03 12:15:14,798 (MainThread): On postgres_get_relations: ROLLBACK
+2019-05-03 12:15:14,801 (MainThread): Acquiring new postgres connection "list_schemas".
+2019-05-03 12:15:14,801 (MainThread): Re-using an available connection from the pool.
+2019-05-03 12:15:14,801 (MainThread): Using postgres connection "list_schemas".
+2019-05-03 12:15:14,801 (MainThread): On list_schemas: 
+    select distinct nspname from pg_namespace
+  
+2019-05-03 12:15:14,802 (MainThread): SQL status: SELECT 7 in 0.00 seconds
+2019-05-03 12:15:14,802 (MainThread): 12:15:14 | Concurrency: 1 threads (target='dev')
+2019-05-03 12:15:14,802 (MainThread): 12:15:14 | 
+2019-05-03 12:15:14,807 (Thread-1): 12:15:14 | 1 of 1 START table model public.my_first_dbt_model................... [RUN]
+2019-05-03 12:15:14,807 (Thread-1): Compiling model.my_new_package.my_first_dbt_model
+2019-05-03 12:15:14,811 (Thread-1): Writing injected SQL for node "model.my_new_package.my_first_dbt_model"
+2019-05-03 12:15:14,834 (Thread-1): Acquiring new postgres connection "my_first_dbt_model".
+2019-05-03 12:15:14,835 (Thread-1): Re-using an available connection from the pool.
+2019-05-03 12:15:14,835 (Thread-1): Using postgres connection "my_first_dbt_model".
+2019-05-03 12:15:14,835 (Thread-1): On my_first_dbt_model: drop table if exists "practicedb"."public"."my_first_dbt_model__dbt_tmp" cascade
+2019-05-03 12:15:14,835 (Thread-1): SQL status: DROP TABLE in 0.00 seconds
+2019-05-03 12:15:14,839 (Thread-1): Using postgres connection "my_first_dbt_model".
+2019-05-03 12:15:14,839 (Thread-1): On my_first_dbt_model: drop view if exists "practicedb"."public"."my_first_dbt_model__dbt_backup" cascade
+2019-05-03 12:15:14,839 (Thread-1): SQL status: DROP VIEW in 0.00 seconds
+2019-05-03 12:15:14,855 (Thread-1): Writing runtime SQL for node "model.my_new_package.my_first_dbt_model"
+2019-05-03 12:15:14,856 (Thread-1): Using postgres connection "my_first_dbt_model".
+2019-05-03 12:15:14,856 (Thread-1): On my_first_dbt_model: BEGIN
+2019-05-03 12:15:14,856 (Thread-1): SQL status: BEGIN in 0.00 seconds
+2019-05-03 12:15:14,856 (Thread-1): Using postgres connection "my_first_dbt_model".
+2019-05-03 12:15:14,856 (Thread-1): On my_first_dbt_model: create  table
+    "practicedb"."public"."my_first_dbt_model__dbt_tmp"
+  as (
+    -- Welcome to your first dbt model!
+-- Did you know that you can also configure models directly within
+-- the SQL file? This will override configurations stated in dbt_project.yml
+
+-- Try changing 'view' to 'table', then re-running dbt
+
+
+
+select * from public.actor
+  );
+2019-05-03 12:15:14,891 (Thread-1): SQL status: SELECT 200 in 0.03 seconds
+2019-05-03 12:15:14,897 (Thread-1): Using postgres connection "my_first_dbt_model".
+2019-05-03 12:15:14,897 (Thread-1): On my_first_dbt_model: alter table "practicedb"."public"."my_first_dbt_model" rename to "my_first_dbt_model__dbt_backup"
+2019-05-03 12:15:14,897 (Thread-1): SQL status: ALTER TABLE in 0.00 seconds
+2019-05-03 12:15:14,902 (Thread-1): Using postgres connection "my_first_dbt_model".
+2019-05-03 12:15:14,902 (Thread-1): On my_first_dbt_model: alter table "practicedb"."public"."my_first_dbt_model__dbt_tmp" rename to "my_first_dbt_model"
+2019-05-03 12:15:14,902 (Thread-1): SQL status: ALTER TABLE in 0.00 seconds
+2019-05-03 12:15:14,903 (Thread-1): On my_first_dbt_model: COMMIT
+2019-05-03 12:15:14,903 (Thread-1): Using postgres connection "my_first_dbt_model".
+2019-05-03 12:15:14,903 (Thread-1): On my_first_dbt_model: COMMIT
+2019-05-03 12:15:14,905 (Thread-1): SQL status: COMMIT in 0.00 seconds
+2019-05-03 12:15:14,908 (Thread-1): Using postgres connection "my_first_dbt_model".
+2019-05-03 12:15:14,908 (Thread-1): On my_first_dbt_model: drop view if exists "practicedb"."public"."my_first_dbt_model__dbt_backup" cascade
+2019-05-03 12:15:14,909 (Thread-1): SQL status: DROP VIEW in 0.00 seconds
+2019-05-03 12:15:14,913 (Thread-1): Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'aa8bd357-27db-4e73-81e7-51bbeee1b1d4', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10b10cf98>]}
+2019-05-03 12:15:15,110 (Thread-1): 12:15:15 | 1 of 1 OK created table model public.my_first_dbt_model.............. [SELECT 200 in 0.11s]
+2019-05-03 12:15:15,117 (MainThread): 12:15:15 | 
+2019-05-03 12:15:15,118 (MainThread): 12:15:15 | Finished running 1 table models in 0.69s.
+2019-05-03 12:15:15,121 (MainThread): 
+2019-05-03 12:15:15,122 (MainThread): Completed successfully
+2019-05-03 12:15:15,122 (MainThread): 
+Done. PASS=1 ERROR=0 SKIP=0 TOTAL=1
+2019-05-03 12:15:15,122 (MainThread): Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10a7d3780>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10a7d36d8>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10a7d39b0>]}
+2019-05-03 12:15:15,315 (MainThread): Flushing usage events
+2019-05-03 13:12:51,682 (MainThread): Tracking: tracking
+2019-05-03 13:12:51,691 (MainThread): Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x110806b00>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10e745588>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1108065f8>]}
+2019-05-03 13:12:51,958 (MainThread): Parsing macros/core.sql
+2019-05-03 13:12:51,966 (MainThread): Parsing macros/materializations/helpers.sql
+2019-05-03 13:12:51,974 (MainThread): Parsing macros/materializations/seed/seed.sql
+2019-05-03 13:12:51,993 (MainThread): Parsing macros/materializations/incremental/incremental.sql
+2019-05-03 13:12:52,006 (MainThread): Parsing macros/materializations/archive/archive.sql
+2019-05-03 13:12:52,027 (MainThread): Parsing macros/materializations/common/merge.sql
+2019-05-03 13:12:52,034 (MainThread): Parsing macros/materializations/table/table.sql
+2019-05-03 13:12:52,046 (MainThread): Parsing macros/materializations/view/view.sql
+2019-05-03 13:12:52,054 (MainThread): Parsing macros/materializations/view/create_or_replace_view.sql
+2019-05-03 13:12:52,063 (MainThread): Parsing macros/etc/is_incremental.sql
+2019-05-03 13:12:52,065 (MainThread): Parsing macros/etc/datetime.sql
+2019-05-03 13:12:52,075 (MainThread): Parsing macros/etc/get_custom_schema.sql
+2019-05-03 13:12:52,079 (MainThread): Parsing macros/adapters/common.sql
+2019-05-03 13:12:52,108 (MainThread): Parsing macros/schema_tests/relationships.sql
+2019-05-03 13:12:52,110 (MainThread): Parsing macros/schema_tests/not_null.sql
+2019-05-03 13:12:52,112 (MainThread): Parsing macros/schema_tests/unique.sql
+2019-05-03 13:12:52,115 (MainThread): Parsing macros/schema_tests/accepted_values.sql
+2019-05-03 13:12:52,117 (MainThread): Parsing macros/catalog.sql
+2019-05-03 13:12:52,120 (MainThread): Parsing macros/relations.sql
+2019-05-03 13:12:52,123 (MainThread): Parsing macros/adapters.sql
+2019-05-03 13:12:52,140 (MainThread): Parsing model.my_new_package.my_first_dbt_model
+2019-05-03 13:12:52,176 (MainThread): Found 1 models, 0 tests, 0 archives, 0 analyses, 94 macros, 0 operations, 0 seed files, 0 sources
+2019-05-03 13:12:52,177 (MainThread): 
+2019-05-03 13:12:52,192 (MainThread): Parsing macros/core.sql
+2019-05-03 13:12:52,196 (MainThread): Parsing macros/materializations/helpers.sql
+2019-05-03 13:12:52,202 (MainThread): Parsing macros/materializations/seed/seed.sql
+2019-05-03 13:12:52,219 (MainThread): Parsing macros/materializations/incremental/incremental.sql
+2019-05-03 13:12:52,233 (MainThread): Parsing macros/materializations/archive/archive.sql
+2019-05-03 13:12:52,255 (MainThread): Parsing macros/materializations/common/merge.sql
+2019-05-03 13:12:52,259 (MainThread): Parsing macros/materializations/table/table.sql
+2019-05-03 13:12:52,268 (MainThread): Parsing macros/materializations/view/view.sql
+2019-05-03 13:12:52,277 (MainThread): Parsing macros/materializations/view/create_or_replace_view.sql
+2019-05-03 13:12:52,284 (MainThread): Parsing macros/etc/is_incremental.sql
+2019-05-03 13:12:52,286 (MainThread): Parsing macros/etc/datetime.sql
+2019-05-03 13:12:52,295 (MainThread): Parsing macros/etc/get_custom_schema.sql
+2019-05-03 13:12:52,299 (MainThread): Parsing macros/adapters/common.sql
+2019-05-03 13:12:52,329 (MainThread): Parsing macros/schema_tests/relationships.sql
+2019-05-03 13:12:52,331 (MainThread): Parsing macros/schema_tests/not_null.sql
+2019-05-03 13:12:52,332 (MainThread): Parsing macros/schema_tests/unique.sql
+2019-05-03 13:12:52,333 (MainThread): Parsing macros/schema_tests/accepted_values.sql
+2019-05-03 13:12:52,335 (MainThread): Parsing macros/catalog.sql
+2019-05-03 13:12:52,337 (MainThread): Parsing macros/relations.sql
+2019-05-03 13:12:52,339 (MainThread): Parsing macros/adapters.sql
+2019-05-03 13:12:52,439 (MainThread): Acquiring new postgres connection "list_relations_without_caching".
+2019-05-03 13:12:52,439 (MainThread): Opening a new connection, currently in state init
+2019-05-03 13:12:52,451 (MainThread): Using postgres connection "list_relations_without_caching".
+2019-05-03 13:12:52,451 (MainThread): On list_relations_without_caching: BEGIN
+2019-05-03 13:12:52,452 (MainThread): SQL status: BEGIN in 0.00 seconds
+2019-05-03 13:12:52,452 (MainThread): Using postgres connection "list_relations_without_caching".
+2019-05-03 13:12:52,452 (MainThread): On list_relations_without_caching: select
+      'practicedb' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'public'
+    union all
+    select
+      'practicedb' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'public'
+  
+2019-05-03 13:12:52,456 (MainThread): SQL status: SELECT 24 in 0.00 seconds
+2019-05-03 13:12:52,464 (MainThread): On list_relations_without_caching: ROLLBACK
+2019-05-03 13:12:52,482 (MainThread): Acquiring new postgres connection "postgres_get_relations".
+2019-05-03 13:12:52,482 (MainThread): Re-using an available connection from the pool.
+2019-05-03 13:12:52,482 (MainThread): Using postgres connection "postgres_get_relations".
+2019-05-03 13:12:52,482 (MainThread): On postgres_get_relations: BEGIN
+2019-05-03 13:12:52,482 (MainThread): SQL status: BEGIN in 0.00 seconds
+2019-05-03 13:12:52,483 (MainThread): Using postgres connection "postgres_get_relations".
+2019-05-03 13:12:52,483 (MainThread): On postgres_get_relations: -- 
+    -- 
+    with relation as (
+        select
+            pg_rewrite.ev_class as class,
+            pg_rewrite.oid as id
+        from pg_rewrite
+    ),
+    class as (
+        select
+            oid as id,
+            relname as name,
+            relnamespace as schema,
+            relkind as kind
+        from pg_class
+    ),
+    dependency as (
+        select
+            pg_depend.objid as id,
+            pg_depend.refobjid as ref
+        from pg_depend
+    ),
+    schema as (
+        select
+            pg_namespace.oid as id,
+            pg_namespace.nspname as name
+        from pg_namespace
+        where nspname != 'information_schema' and nspname not like 'pg_%'
+    ),
+    referenced as (
+        select
+            relation.id AS id,
+            referenced_class.name ,
+            referenced_class.schema ,
+            referenced_class.kind
+        from relation
+        join class as referenced_class on relation.class=referenced_class.id
+        where referenced_class.kind in ('r', 'v')
+    ),
+    relationships as (
+        select
+            referenced.name as referenced_name,
+            referenced.schema as referenced_schema_id,
+            dependent_class.name as dependent_name,
+            dependent_class.schema as dependent_schema_id,
+            referenced.kind as kind
+        from referenced
+        join dependency on referenced.id=dependency.id
+        join class as dependent_class on dependency.ref=dependent_class.id
+        where
+            (referenced.name != dependent_class.name or
+             referenced.schema != dependent_class.schema)
+    )
+
+    select
+        referenced_schema.name as referenced_schema,
+        relationships.referenced_name as referenced_name,
+        dependent_schema.name as dependent_schema,
+        relationships.dependent_name as dependent_name
+    from relationships
+    join schema as dependent_schema on relationships.dependent_schema_id=dependent_schema.id
+    join schema as referenced_schema on relationships.referenced_schema_id=referenced_schema.id
+    group by referenced_schema, referenced_name, dependent_schema, dependent_name
+    order by referenced_schema, referenced_name, dependent_schema, dependent_name;
+2019-05-03 13:12:52,489 (MainThread): SQL status: SELECT 38 in 0.01 seconds
+2019-05-03 13:12:52,507 (MainThread): On postgres_get_relations: ROLLBACK
+2019-05-03 13:12:52,509 (MainThread): Acquiring new postgres connection "list_schemas".
+2019-05-03 13:12:52,509 (MainThread): Re-using an available connection from the pool.
+2019-05-03 13:12:52,509 (MainThread): Using postgres connection "list_schemas".
+2019-05-03 13:12:52,509 (MainThread): On list_schemas: 
+    select distinct nspname from pg_namespace
+  
+2019-05-03 13:12:52,510 (MainThread): SQL status: SELECT 7 in 0.00 seconds
+2019-05-03 13:12:52,511 (MainThread): 13:12:52 | Concurrency: 1 threads (target='dev')
+2019-05-03 13:12:52,511 (MainThread): 13:12:52 | 
+2019-05-03 13:12:52,513 (Thread-1): 13:12:52 | 1 of 1 START table model public.my_first_dbt_model................... [RUN]
+2019-05-03 13:12:52,513 (Thread-1): Compiling model.my_new_package.my_first_dbt_model
+2019-05-03 13:12:52,517 (Thread-1): Writing injected SQL for node "model.my_new_package.my_first_dbt_model"
+2019-05-03 13:12:52,540 (Thread-1): Acquiring new postgres connection "my_first_dbt_model".
+2019-05-03 13:12:52,540 (Thread-1): Re-using an available connection from the pool.
+2019-05-03 13:12:52,540 (Thread-1): Using postgres connection "my_first_dbt_model".
+2019-05-03 13:12:52,540 (Thread-1): On my_first_dbt_model: drop table if exists "practicedb"."public"."my_first_dbt_model__dbt_tmp" cascade
+2019-05-03 13:12:52,540 (Thread-1): SQL status: DROP TABLE in 0.00 seconds
+2019-05-03 13:12:52,543 (Thread-1): Using postgres connection "my_first_dbt_model".
+2019-05-03 13:12:52,543 (Thread-1): On my_first_dbt_model: drop table if exists "practicedb"."public"."my_first_dbt_model__dbt_backup" cascade
+2019-05-03 13:12:52,543 (Thread-1): SQL status: DROP TABLE in 0.00 seconds
+2019-05-03 13:12:52,558 (Thread-1): Writing runtime SQL for node "model.my_new_package.my_first_dbt_model"
+2019-05-03 13:12:52,559 (Thread-1): Using postgres connection "my_first_dbt_model".
+2019-05-03 13:12:52,559 (Thread-1): On my_first_dbt_model: BEGIN
+2019-05-03 13:12:52,559 (Thread-1): SQL status: BEGIN in 0.00 seconds
+2019-05-03 13:12:52,559 (Thread-1): Using postgres connection "my_first_dbt_model".
+2019-05-03 13:12:52,559 (Thread-1): On my_first_dbt_model: create  table
+    "practicedb"."public"."my_first_dbt_model__dbt_tmp"
+  as (
+    -- Welcome to your first dbt model!
+-- Did you know that you can also configure models directly within
+-- the SQL file? This will override configurations stated in dbt_project.yml
+
+-- Try changing 'view' to 'table', then re-running dbt
+
+
+
+select *,
+       Concat(first_name,' ', last_name) as full_name
+
+
+
+from public.actor WHERE
+  );
+2019-05-03 13:12:52,560 (Thread-1): Postgres error: syntax error at or near ")"
+LINE 18:   );
+           ^
+
+2019-05-03 13:12:52,560 (Thread-1): On my_first_dbt_model: ROLLBACK
+2019-05-03 13:12:52,561 (Thread-1): Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '5daa752e-0344-48dd-91b3-db451b737a62', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11122c9e8>]}
+2019-05-03 13:12:52,752 (Thread-1): 13:12:52 | 1 of 1 ERROR creating table model public.my_first_dbt_model.......... [ERROR in 0.05s]
+2019-05-03 13:12:52,821 (MainThread): 13:12:52 | 
+2019-05-03 13:12:52,821 (MainThread): 13:12:52 | Finished running 1 table models in 0.64s.
+2019-05-03 13:12:52,825 (MainThread): 
+2019-05-03 13:12:52,825 (MainThread): Completed with 1 errors:
+2019-05-03 13:12:52,826 (MainThread): 
+2019-05-03 13:12:52,826 (MainThread): Database Error in model my_first_dbt_model (models/example/my_first_dbt_model.sql)
+2019-05-03 13:12:52,826 (MainThread):   syntax error at or near ")"
+2019-05-03 13:12:52,826 (MainThread):   LINE 18:   );
+2019-05-03 13:12:52,826 (MainThread):              ^
+2019-05-03 13:12:52,826 (MainThread):   compiled SQL at target/compiled/my_new_package/example/my_first_dbt_model.sql
+2019-05-03 13:12:52,827 (MainThread): 
+Done. PASS=0 ERROR=1 SKIP=0 TOTAL=1
+2019-05-03 13:12:52,827 (MainThread): Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11097f748>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11097fa90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x111212a90>]}
+2019-05-03 13:12:53,013 (MainThread): Flushing usage events
+2019-05-03 13:13:23,981 (MainThread): Tracking: tracking
+2019-05-03 13:13:23,987 (MainThread): Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1045aa1d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1045aa390>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1045aa208>]}
+2019-05-03 13:13:24,204 (MainThread): Parsing macros/core.sql
+2019-05-03 13:13:24,210 (MainThread): Parsing macros/materializations/helpers.sql
+2019-05-03 13:13:24,217 (MainThread): Parsing macros/materializations/seed/seed.sql
+2019-05-03 13:13:24,233 (MainThread): Parsing macros/materializations/incremental/incremental.sql
+2019-05-03 13:13:24,244 (MainThread): Parsing macros/materializations/archive/archive.sql
+2019-05-03 13:13:24,265 (MainThread): Parsing macros/materializations/common/merge.sql
+2019-05-03 13:13:24,269 (MainThread): Parsing macros/materializations/table/table.sql
+2019-05-03 13:13:24,277 (MainThread): Parsing macros/materializations/view/view.sql
+2019-05-03 13:13:24,283 (MainThread): Parsing macros/materializations/view/create_or_replace_view.sql
+2019-05-03 13:13:24,290 (MainThread): Parsing macros/etc/is_incremental.sql
+2019-05-03 13:13:24,291 (MainThread): Parsing macros/etc/datetime.sql
+2019-05-03 13:13:24,298 (MainThread): Parsing macros/etc/get_custom_schema.sql
+2019-05-03 13:13:24,301 (MainThread): Parsing macros/adapters/common.sql
+2019-05-03 13:13:24,334 (MainThread): Parsing macros/schema_tests/relationships.sql
+2019-05-03 13:13:24,336 (MainThread): Parsing macros/schema_tests/not_null.sql
+2019-05-03 13:13:24,337 (MainThread): Parsing macros/schema_tests/unique.sql
+2019-05-03 13:13:24,339 (MainThread): Parsing macros/schema_tests/accepted_values.sql
+2019-05-03 13:13:24,342 (MainThread): Parsing macros/catalog.sql
+2019-05-03 13:13:24,344 (MainThread): Parsing macros/relations.sql
+2019-05-03 13:13:24,346 (MainThread): Parsing macros/adapters.sql
+2019-05-03 13:13:24,364 (MainThread): Parsing model.my_new_package.my_first_dbt_model
+2019-05-03 13:13:24,391 (MainThread): Found 1 models, 0 tests, 0 archives, 0 analyses, 94 macros, 0 operations, 0 seed files, 0 sources
+2019-05-03 13:13:24,391 (MainThread): 
+2019-05-03 13:13:24,404 (MainThread): Parsing macros/core.sql
+2019-05-03 13:13:24,408 (MainThread): Parsing macros/materializations/helpers.sql
+2019-05-03 13:13:24,414 (MainThread): Parsing macros/materializations/seed/seed.sql
+2019-05-03 13:13:24,429 (MainThread): Parsing macros/materializations/incremental/incremental.sql
+2019-05-03 13:13:24,439 (MainThread): Parsing macros/materializations/archive/archive.sql
+2019-05-03 13:13:24,461 (MainThread): Parsing macros/materializations/common/merge.sql
+2019-05-03 13:13:24,465 (MainThread): Parsing macros/materializations/table/table.sql
+2019-05-03 13:13:24,475 (MainThread): Parsing macros/materializations/view/view.sql
+2019-05-03 13:13:24,484 (MainThread): Parsing macros/materializations/view/create_or_replace_view.sql
+2019-05-03 13:13:24,491 (MainThread): Parsing macros/etc/is_incremental.sql
+2019-05-03 13:13:24,492 (MainThread): Parsing macros/etc/datetime.sql
+2019-05-03 13:13:24,500 (MainThread): Parsing macros/etc/get_custom_schema.sql
+2019-05-03 13:13:24,502 (MainThread): Parsing macros/adapters/common.sql
+2019-05-03 13:13:24,529 (MainThread): Parsing macros/schema_tests/relationships.sql
+2019-05-03 13:13:24,530 (MainThread): Parsing macros/schema_tests/not_null.sql
+2019-05-03 13:13:24,531 (MainThread): Parsing macros/schema_tests/unique.sql
+2019-05-03 13:13:24,533 (MainThread): Parsing macros/schema_tests/accepted_values.sql
+2019-05-03 13:13:24,535 (MainThread): Parsing macros/catalog.sql
+2019-05-03 13:13:24,538 (MainThread): Parsing macros/relations.sql
+2019-05-03 13:13:24,540 (MainThread): Parsing macros/adapters.sql
+2019-05-03 13:13:24,649 (MainThread): Acquiring new postgres connection "list_relations_without_caching".
+2019-05-03 13:13:24,650 (MainThread): Opening a new connection, currently in state init
+2019-05-03 13:13:24,654 (MainThread): Using postgres connection "list_relations_without_caching".
+2019-05-03 13:13:24,654 (MainThread): On list_relations_without_caching: BEGIN
+2019-05-03 13:13:24,654 (MainThread): SQL status: BEGIN in 0.00 seconds
+2019-05-03 13:13:24,655 (MainThread): Using postgres connection "list_relations_without_caching".
+2019-05-03 13:13:24,655 (MainThread): On list_relations_without_caching: select
+      'practicedb' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'public'
+    union all
+    select
+      'practicedb' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'public'
+  
+2019-05-03 13:13:24,657 (MainThread): SQL status: SELECT 24 in 0.00 seconds
+2019-05-03 13:13:24,666 (MainThread): On list_relations_without_caching: ROLLBACK
+2019-05-03 13:13:24,687 (MainThread): Acquiring new postgres connection "postgres_get_relations".
+2019-05-03 13:13:24,687 (MainThread): Re-using an available connection from the pool.
+2019-05-03 13:13:24,687 (MainThread): Using postgres connection "postgres_get_relations".
+2019-05-03 13:13:24,688 (MainThread): On postgres_get_relations: BEGIN
+2019-05-03 13:13:24,688 (MainThread): SQL status: BEGIN in 0.00 seconds
+2019-05-03 13:13:24,688 (MainThread): Using postgres connection "postgres_get_relations".
+2019-05-03 13:13:24,688 (MainThread): On postgres_get_relations: -- 
+    -- 
+    with relation as (
+        select
+            pg_rewrite.ev_class as class,
+            pg_rewrite.oid as id
+        from pg_rewrite
+    ),
+    class as (
+        select
+            oid as id,
+            relname as name,
+            relnamespace as schema,
+            relkind as kind
+        from pg_class
+    ),
+    dependency as (
+        select
+            pg_depend.objid as id,
+            pg_depend.refobjid as ref
+        from pg_depend
+    ),
+    schema as (
+        select
+            pg_namespace.oid as id,
+            pg_namespace.nspname as name
+        from pg_namespace
+        where nspname != 'information_schema' and nspname not like 'pg_%'
+    ),
+    referenced as (
+        select
+            relation.id AS id,
+            referenced_class.name ,
+            referenced_class.schema ,
+            referenced_class.kind
+        from relation
+        join class as referenced_class on relation.class=referenced_class.id
+        where referenced_class.kind in ('r', 'v')
+    ),
+    relationships as (
+        select
+            referenced.name as referenced_name,
+            referenced.schema as referenced_schema_id,
+            dependent_class.name as dependent_name,
+            dependent_class.schema as dependent_schema_id,
+            referenced.kind as kind
+        from referenced
+        join dependency on referenced.id=dependency.id
+        join class as dependent_class on dependency.ref=dependent_class.id
+        where
+            (referenced.name != dependent_class.name or
+             referenced.schema != dependent_class.schema)
+    )
+
+    select
+        referenced_schema.name as referenced_schema,
+        relationships.referenced_name as referenced_name,
+        dependent_schema.name as dependent_schema,
+        relationships.dependent_name as dependent_name
+    from relationships
+    join schema as dependent_schema on relationships.dependent_schema_id=dependent_schema.id
+    join schema as referenced_schema on relationships.referenced_schema_id=referenced_schema.id
+    group by referenced_schema, referenced_name, dependent_schema, dependent_name
+    order by referenced_schema, referenced_name, dependent_schema, dependent_name;
+2019-05-03 13:13:24,693 (MainThread): SQL status: SELECT 38 in 0.00 seconds
+2019-05-03 13:13:24,711 (MainThread): On postgres_get_relations: ROLLBACK
+2019-05-03 13:13:24,714 (MainThread): Acquiring new postgres connection "list_schemas".
+2019-05-03 13:13:24,714 (MainThread): Re-using an available connection from the pool.
+2019-05-03 13:13:24,714 (MainThread): Using postgres connection "list_schemas".
+2019-05-03 13:13:24,714 (MainThread): On list_schemas: 
+    select distinct nspname from pg_namespace
+  
+2019-05-03 13:13:24,714 (MainThread): SQL status: SELECT 7 in 0.00 seconds
+2019-05-03 13:13:24,715 (MainThread): 13:13:24 | Concurrency: 1 threads (target='dev')
+2019-05-03 13:13:24,715 (MainThread): 13:13:24 | 
+2019-05-03 13:13:24,717 (Thread-1): 13:13:24 | 1 of 1 START table model public.my_first_dbt_model................... [RUN]
+2019-05-03 13:13:24,717 (Thread-1): Compiling model.my_new_package.my_first_dbt_model
+2019-05-03 13:13:24,721 (Thread-1): Writing injected SQL for node "model.my_new_package.my_first_dbt_model"
+2019-05-03 13:13:24,743 (Thread-1): Acquiring new postgres connection "my_first_dbt_model".
+2019-05-03 13:13:24,744 (Thread-1): Re-using an available connection from the pool.
+2019-05-03 13:13:24,744 (Thread-1): Using postgres connection "my_first_dbt_model".
+2019-05-03 13:13:24,744 (Thread-1): On my_first_dbt_model: drop table if exists "practicedb"."public"."my_first_dbt_model__dbt_tmp" cascade
+2019-05-03 13:13:24,744 (Thread-1): SQL status: DROP TABLE in 0.00 seconds
+2019-05-03 13:13:24,748 (Thread-1): Using postgres connection "my_first_dbt_model".
+2019-05-03 13:13:24,748 (Thread-1): On my_first_dbt_model: drop table if exists "practicedb"."public"."my_first_dbt_model__dbt_backup" cascade
+2019-05-03 13:13:24,748 (Thread-1): SQL status: DROP TABLE in 0.00 seconds
+2019-05-03 13:13:24,764 (Thread-1): Writing runtime SQL for node "model.my_new_package.my_first_dbt_model"
+2019-05-03 13:13:24,764 (Thread-1): Using postgres connection "my_first_dbt_model".
+2019-05-03 13:13:24,765 (Thread-1): On my_first_dbt_model: BEGIN
+2019-05-03 13:13:24,765 (Thread-1): SQL status: BEGIN in 0.00 seconds
+2019-05-03 13:13:24,765 (Thread-1): Using postgres connection "my_first_dbt_model".
+2019-05-03 13:13:24,765 (Thread-1): On my_first_dbt_model: create  table
+    "practicedb"."public"."my_first_dbt_model__dbt_tmp"
+  as (
+    -- Welcome to your first dbt model!
+-- Did you know that you can also configure models directly within
+-- the SQL file? This will override configurations stated in dbt_project.yml
+
+-- Try changing 'view' to 'table', then re-running dbt
+
+
+
+select *,
+       Concat(first_name,' ', last_name) as full_name
+
+
+
+from public.actor WHERE
+  );
+2019-05-03 13:13:24,765 (Thread-1): Postgres error: syntax error at or near ")"
+LINE 18:   );
+           ^
+
+2019-05-03 13:13:24,765 (Thread-1): On my_first_dbt_model: ROLLBACK
+2019-05-03 13:13:24,767 (Thread-1): Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '410b7e91-4f2e-4b8d-8c38-1ab81cf6ca8f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1050b5828>]}
+2019-05-03 13:13:24,958 (Thread-1): 13:13:24 | 1 of 1 ERROR creating table model public.my_first_dbt_model.......... [ERROR in 0.05s]
+2019-05-03 13:13:25,027 (MainThread): 13:13:25 | 
+2019-05-03 13:13:25,028 (MainThread): 13:13:25 | Finished running 1 table models in 0.64s.
+2019-05-03 13:13:25,032 (MainThread): 
+2019-05-03 13:13:25,032 (MainThread): Completed with 1 errors:
+2019-05-03 13:13:25,032 (MainThread): 
+2019-05-03 13:13:25,033 (MainThread): Database Error in model my_first_dbt_model (models/example/my_first_dbt_model.sql)
+2019-05-03 13:13:25,033 (MainThread):   syntax error at or near ")"
+2019-05-03 13:13:25,033 (MainThread):   LINE 18:   );
+2019-05-03 13:13:25,033 (MainThread):              ^
+2019-05-03 13:13:25,033 (MainThread):   compiled SQL at target/compiled/my_new_package/example/my_first_dbt_model.sql
+2019-05-03 13:13:25,034 (MainThread): 
+Done. PASS=0 ERROR=1 SKIP=0 TOTAL=1
+2019-05-03 13:13:25,034 (MainThread): Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10472c080>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1044ce898>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10472c1d0>]}
+2019-05-03 13:13:25,230 (MainThread): Flushing usage events
+2019-05-03 13:13:49,984 (MainThread): Tracking: tracking
+2019-05-03 13:13:49,995 (MainThread): Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107f66588>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107f66400>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107f66390>]}
+2019-05-03 13:13:50,216 (MainThread): Parsing macros/core.sql
+2019-05-03 13:13:50,221 (MainThread): Parsing macros/materializations/helpers.sql
+2019-05-03 13:13:50,229 (MainThread): Parsing macros/materializations/seed/seed.sql
+2019-05-03 13:13:50,245 (MainThread): Parsing macros/materializations/incremental/incremental.sql
+2019-05-03 13:13:50,256 (MainThread): Parsing macros/materializations/archive/archive.sql
+2019-05-03 13:13:50,276 (MainThread): Parsing macros/materializations/common/merge.sql
+2019-05-03 13:13:50,280 (MainThread): Parsing macros/materializations/table/table.sql
+2019-05-03 13:13:50,288 (MainThread): Parsing macros/materializations/view/view.sql
+2019-05-03 13:13:50,294 (MainThread): Parsing macros/materializations/view/create_or_replace_view.sql
+2019-05-03 13:13:50,300 (MainThread): Parsing macros/etc/is_incremental.sql
+2019-05-03 13:13:50,302 (MainThread): Parsing macros/etc/datetime.sql
+2019-05-03 13:13:50,310 (MainThread): Parsing macros/etc/get_custom_schema.sql
+2019-05-03 13:13:50,312 (MainThread): Parsing macros/adapters/common.sql
+2019-05-03 13:13:50,345 (MainThread): Parsing macros/schema_tests/relationships.sql
+2019-05-03 13:13:50,347 (MainThread): Parsing macros/schema_tests/not_null.sql
+2019-05-03 13:13:50,348 (MainThread): Parsing macros/schema_tests/unique.sql
+2019-05-03 13:13:50,350 (MainThread): Parsing macros/schema_tests/accepted_values.sql
+2019-05-03 13:13:50,353 (MainThread): Parsing macros/catalog.sql
+2019-05-03 13:13:50,356 (MainThread): Parsing macros/relations.sql
+2019-05-03 13:13:50,359 (MainThread): Parsing macros/adapters.sql
+2019-05-03 13:13:50,382 (MainThread): Parsing model.my_new_package.my_first_dbt_model
+2019-05-03 13:13:50,414 (MainThread): Found 1 models, 0 tests, 0 archives, 0 analyses, 94 macros, 0 operations, 0 seed files, 0 sources
+2019-05-03 13:13:50,414 (MainThread): 
+2019-05-03 13:13:50,426 (MainThread): Parsing macros/core.sql
+2019-05-03 13:13:50,430 (MainThread): Parsing macros/materializations/helpers.sql
+2019-05-03 13:13:50,439 (MainThread): Parsing macros/materializations/seed/seed.sql
+2019-05-03 13:13:50,459 (MainThread): Parsing macros/materializations/incremental/incremental.sql
+2019-05-03 13:13:50,470 (MainThread): Parsing macros/materializations/archive/archive.sql
+2019-05-03 13:13:50,494 (MainThread): Parsing macros/materializations/common/merge.sql
+2019-05-03 13:13:50,499 (MainThread): Parsing macros/materializations/table/table.sql
+2019-05-03 13:13:50,507 (MainThread): Parsing macros/materializations/view/view.sql
+2019-05-03 13:13:50,514 (MainThread): Parsing macros/materializations/view/create_or_replace_view.sql
+2019-05-03 13:13:50,520 (MainThread): Parsing macros/etc/is_incremental.sql
+2019-05-03 13:13:50,522 (MainThread): Parsing macros/etc/datetime.sql
+2019-05-03 13:13:50,529 (MainThread): Parsing macros/etc/get_custom_schema.sql
+2019-05-03 13:13:50,531 (MainThread): Parsing macros/adapters/common.sql
+2019-05-03 13:13:50,559 (MainThread): Parsing macros/schema_tests/relationships.sql
+2019-05-03 13:13:50,560 (MainThread): Parsing macros/schema_tests/not_null.sql
+2019-05-03 13:13:50,561 (MainThread): Parsing macros/schema_tests/unique.sql
+2019-05-03 13:13:50,563 (MainThread): Parsing macros/schema_tests/accepted_values.sql
+2019-05-03 13:13:50,564 (MainThread): Parsing macros/catalog.sql
+2019-05-03 13:13:50,566 (MainThread): Parsing macros/relations.sql
+2019-05-03 13:13:50,568 (MainThread): Parsing macros/adapters.sql
+2019-05-03 13:13:50,678 (MainThread): Acquiring new postgres connection "list_relations_without_caching".
+2019-05-03 13:13:50,678 (MainThread): Opening a new connection, currently in state init
+2019-05-03 13:13:50,683 (MainThread): Using postgres connection "list_relations_without_caching".
+2019-05-03 13:13:50,683 (MainThread): On list_relations_without_caching: BEGIN
+2019-05-03 13:13:50,684 (MainThread): SQL status: BEGIN in 0.00 seconds
+2019-05-03 13:13:50,684 (MainThread): Using postgres connection "list_relations_without_caching".
+2019-05-03 13:13:50,684 (MainThread): On list_relations_without_caching: select
+      'practicedb' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'public'
+    union all
+    select
+      'practicedb' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'public'
+  
+2019-05-03 13:13:50,687 (MainThread): SQL status: SELECT 24 in 0.00 seconds
+2019-05-03 13:13:50,695 (MainThread): On list_relations_without_caching: ROLLBACK
+2019-05-03 13:13:50,713 (MainThread): Acquiring new postgres connection "postgres_get_relations".
+2019-05-03 13:13:50,713 (MainThread): Re-using an available connection from the pool.
+2019-05-03 13:13:50,714 (MainThread): Using postgres connection "postgres_get_relations".
+2019-05-03 13:13:50,714 (MainThread): On postgres_get_relations: BEGIN
+2019-05-03 13:13:50,714 (MainThread): SQL status: BEGIN in 0.00 seconds
+2019-05-03 13:13:50,714 (MainThread): Using postgres connection "postgres_get_relations".
+2019-05-03 13:13:50,714 (MainThread): On postgres_get_relations: -- 
+    -- 
+    with relation as (
+        select
+            pg_rewrite.ev_class as class,
+            pg_rewrite.oid as id
+        from pg_rewrite
+    ),
+    class as (
+        select
+            oid as id,
+            relname as name,
+            relnamespace as schema,
+            relkind as kind
+        from pg_class
+    ),
+    dependency as (
+        select
+            pg_depend.objid as id,
+            pg_depend.refobjid as ref
+        from pg_depend
+    ),
+    schema as (
+        select
+            pg_namespace.oid as id,
+            pg_namespace.nspname as name
+        from pg_namespace
+        where nspname != 'information_schema' and nspname not like 'pg_%'
+    ),
+    referenced as (
+        select
+            relation.id AS id,
+            referenced_class.name ,
+            referenced_class.schema ,
+            referenced_class.kind
+        from relation
+        join class as referenced_class on relation.class=referenced_class.id
+        where referenced_class.kind in ('r', 'v')
+    ),
+    relationships as (
+        select
+            referenced.name as referenced_name,
+            referenced.schema as referenced_schema_id,
+            dependent_class.name as dependent_name,
+            dependent_class.schema as dependent_schema_id,
+            referenced.kind as kind
+        from referenced
+        join dependency on referenced.id=dependency.id
+        join class as dependent_class on dependency.ref=dependent_class.id
+        where
+            (referenced.name != dependent_class.name or
+             referenced.schema != dependent_class.schema)
+    )
+
+    select
+        referenced_schema.name as referenced_schema,
+        relationships.referenced_name as referenced_name,
+        dependent_schema.name as dependent_schema,
+        relationships.dependent_name as dependent_name
+    from relationships
+    join schema as dependent_schema on relationships.dependent_schema_id=dependent_schema.id
+    join schema as referenced_schema on relationships.referenced_schema_id=referenced_schema.id
+    group by referenced_schema, referenced_name, dependent_schema, dependent_name
+    order by referenced_schema, referenced_name, dependent_schema, dependent_name;
+2019-05-03 13:13:50,719 (MainThread): SQL status: SELECT 38 in 0.00 seconds
+2019-05-03 13:13:50,737 (MainThread): On postgres_get_relations: ROLLBACK
+2019-05-03 13:13:50,739 (MainThread): Acquiring new postgres connection "list_schemas".
+2019-05-03 13:13:50,740 (MainThread): Re-using an available connection from the pool.
+2019-05-03 13:13:50,740 (MainThread): Using postgres connection "list_schemas".
+2019-05-03 13:13:50,740 (MainThread): On list_schemas: 
+    select distinct nspname from pg_namespace
+  
+2019-05-03 13:13:50,740 (MainThread): SQL status: SELECT 7 in 0.00 seconds
+2019-05-03 13:13:50,741 (MainThread): 13:13:50 | Concurrency: 1 threads (target='dev')
+2019-05-03 13:13:50,741 (MainThread): 13:13:50 | 
+2019-05-03 13:13:50,743 (Thread-1): 13:13:50 | 1 of 1 START table model public.my_first_dbt_model................... [RUN]
+2019-05-03 13:13:50,743 (Thread-1): Compiling model.my_new_package.my_first_dbt_model
+2019-05-03 13:13:50,746 (Thread-1): Writing injected SQL for node "model.my_new_package.my_first_dbt_model"
+2019-05-03 13:13:50,769 (Thread-1): Acquiring new postgres connection "my_first_dbt_model".
+2019-05-03 13:13:50,770 (Thread-1): Re-using an available connection from the pool.
+2019-05-03 13:13:50,770 (Thread-1): Using postgres connection "my_first_dbt_model".
+2019-05-03 13:13:50,770 (Thread-1): On my_first_dbt_model: drop table if exists "practicedb"."public"."my_first_dbt_model__dbt_tmp" cascade
+2019-05-03 13:13:50,770 (Thread-1): SQL status: DROP TABLE in 0.00 seconds
+2019-05-03 13:13:50,773 (Thread-1): Using postgres connection "my_first_dbt_model".
+2019-05-03 13:13:50,773 (Thread-1): On my_first_dbt_model: drop table if exists "practicedb"."public"."my_first_dbt_model__dbt_backup" cascade
+2019-05-03 13:13:50,773 (Thread-1): SQL status: DROP TABLE in 0.00 seconds
+2019-05-03 13:13:50,791 (Thread-1): Writing runtime SQL for node "model.my_new_package.my_first_dbt_model"
+2019-05-03 13:13:50,791 (Thread-1): Using postgres connection "my_first_dbt_model".
+2019-05-03 13:13:50,791 (Thread-1): On my_first_dbt_model: BEGIN
+2019-05-03 13:13:50,792 (Thread-1): SQL status: BEGIN in 0.00 seconds
+2019-05-03 13:13:50,792 (Thread-1): Using postgres connection "my_first_dbt_model".
+2019-05-03 13:13:50,792 (Thread-1): On my_first_dbt_model: create  table
+    "practicedb"."public"."my_first_dbt_model__dbt_tmp"
+  as (
+    -- Welcome to your first dbt model!
+-- Did you know that you can also configure models directly within
+-- the SQL file? This will override configurations stated in dbt_project.yml
+
+-- Try changing 'view' to 'table', then re-running dbt
+
+
+
+select *,
+       Concat(first_name,' ', last_name) as full_name
+
+
+
+from public.actor
+  );
+2019-05-03 13:13:50,822 (Thread-1): SQL status: SELECT 200 in 0.03 seconds
+2019-05-03 13:13:50,828 (Thread-1): Using postgres connection "my_first_dbt_model".
+2019-05-03 13:13:50,828 (Thread-1): On my_first_dbt_model: alter table "practicedb"."public"."my_first_dbt_model" rename to "my_first_dbt_model__dbt_backup"
+2019-05-03 13:13:50,828 (Thread-1): SQL status: ALTER TABLE in 0.00 seconds
+2019-05-03 13:13:50,832 (Thread-1): Using postgres connection "my_first_dbt_model".
+2019-05-03 13:13:50,832 (Thread-1): On my_first_dbt_model: alter table "practicedb"."public"."my_first_dbt_model__dbt_tmp" rename to "my_first_dbt_model"
+2019-05-03 13:13:50,833 (Thread-1): SQL status: ALTER TABLE in 0.00 seconds
+2019-05-03 13:13:50,834 (Thread-1): On my_first_dbt_model: COMMIT
+2019-05-03 13:13:50,834 (Thread-1): Using postgres connection "my_first_dbt_model".
+2019-05-03 13:13:50,834 (Thread-1): On my_first_dbt_model: COMMIT
+2019-05-03 13:13:50,835 (Thread-1): SQL status: COMMIT in 0.00 seconds
+2019-05-03 13:13:50,838 (Thread-1): Using postgres connection "my_first_dbt_model".
+2019-05-03 13:13:50,838 (Thread-1): On my_first_dbt_model: drop table if exists "practicedb"."public"."my_first_dbt_model__dbt_backup" cascade
+2019-05-03 13:13:50,842 (Thread-1): SQL status: DROP TABLE in 0.00 seconds
+2019-05-03 13:13:50,848 (Thread-1): Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'a69d3c11-d507-4aed-9ce5-97c56c5c5378', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x108a884e0>]}
+2019-05-03 13:13:51,040 (Thread-1): 13:13:51 | 1 of 1 OK created table model public.my_first_dbt_model.............. [SELECT 200 in 0.10s]
+2019-05-03 13:13:51,057 (MainThread): 13:13:51 | 
+2019-05-03 13:13:51,057 (MainThread): 13:13:51 | Finished running 1 table models in 0.64s.
+2019-05-03 13:13:51,061 (MainThread): 
+2019-05-03 13:13:51,061 (MainThread): Completed successfully
+2019-05-03 13:13:51,061 (MainThread): 
+Done. PASS=1 ERROR=0 SKIP=0 TOTAL=1
+2019-05-03 13:13:51,061 (MainThread): Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1080bf4e0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x108134e80>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x108134e48>]}
+2019-05-03 13:13:51,247 (MainThread): Flushing usage events
+2019-05-03 14:08:30,821 (MainThread): Tracking: tracking
+2019-05-03 14:08:30,832 (MainThread): Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10fccd588>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10fccd1d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10fccd278>]}
+2019-05-03 14:08:31,079 (MainThread): Parsing macros/core.sql
+2019-05-03 14:08:31,085 (MainThread): Parsing macros/materializations/helpers.sql
+2019-05-03 14:08:31,092 (MainThread): Parsing macros/materializations/seed/seed.sql
+2019-05-03 14:08:31,109 (MainThread): Parsing macros/materializations/incremental/incremental.sql
+2019-05-03 14:08:31,121 (MainThread): Parsing macros/materializations/archive/archive.sql
+2019-05-03 14:08:31,144 (MainThread): Parsing macros/materializations/common/merge.sql
+2019-05-03 14:08:31,148 (MainThread): Parsing macros/materializations/table/table.sql
+2019-05-03 14:08:31,157 (MainThread): Parsing macros/materializations/view/view.sql
+2019-05-03 14:08:31,164 (MainThread): Parsing macros/materializations/view/create_or_replace_view.sql
+2019-05-03 14:08:31,173 (MainThread): Parsing macros/etc/is_incremental.sql
+2019-05-03 14:08:31,176 (MainThread): Parsing macros/etc/datetime.sql
+2019-05-03 14:08:31,186 (MainThread): Parsing macros/etc/get_custom_schema.sql
+2019-05-03 14:08:31,190 (MainThread): Parsing macros/adapters/common.sql
+2019-05-03 14:08:31,220 (MainThread): Parsing macros/schema_tests/relationships.sql
+2019-05-03 14:08:31,223 (MainThread): Parsing macros/schema_tests/not_null.sql
+2019-05-03 14:08:31,225 (MainThread): Parsing macros/schema_tests/unique.sql
+2019-05-03 14:08:31,228 (MainThread): Parsing macros/schema_tests/accepted_values.sql
+2019-05-03 14:08:31,231 (MainThread): Parsing macros/catalog.sql
+2019-05-03 14:08:31,235 (MainThread): Parsing macros/relations.sql
+2019-05-03 14:08:31,238 (MainThread): Parsing macros/adapters.sql
+2019-05-03 14:08:31,257 (MainThread): Parsing model.my_new_package.my_first_dbt_model
+2019-05-03 14:08:31,287 (MainThread): Found 1 models, 0 tests, 0 archives, 0 analyses, 94 macros, 0 operations, 0 seed files, 0 sources
+2019-05-03 14:08:31,288 (MainThread): 
+2019-05-03 14:08:31,303 (MainThread): Parsing macros/core.sql
+2019-05-03 14:08:31,308 (MainThread): Parsing macros/materializations/helpers.sql
+2019-05-03 14:08:31,315 (MainThread): Parsing macros/materializations/seed/seed.sql
+2019-05-03 14:08:31,335 (MainThread): Parsing macros/materializations/incremental/incremental.sql
+2019-05-03 14:08:31,346 (MainThread): Parsing macros/materializations/archive/archive.sql
+2019-05-03 14:08:31,366 (MainThread): Parsing macros/materializations/common/merge.sql
+2019-05-03 14:08:31,371 (MainThread): Parsing macros/materializations/table/table.sql
+2019-05-03 14:08:31,380 (MainThread): Parsing macros/materializations/view/view.sql
+2019-05-03 14:08:31,388 (MainThread): Parsing macros/materializations/view/create_or_replace_view.sql
+2019-05-03 14:08:31,394 (MainThread): Parsing macros/etc/is_incremental.sql
+2019-05-03 14:08:31,396 (MainThread): Parsing macros/etc/datetime.sql
+2019-05-03 14:08:31,403 (MainThread): Parsing macros/etc/get_custom_schema.sql
+2019-05-03 14:08:31,406 (MainThread): Parsing macros/adapters/common.sql
+2019-05-03 14:08:31,437 (MainThread): Parsing macros/schema_tests/relationships.sql
+2019-05-03 14:08:31,439 (MainThread): Parsing macros/schema_tests/not_null.sql
+2019-05-03 14:08:31,440 (MainThread): Parsing macros/schema_tests/unique.sql
+2019-05-03 14:08:31,442 (MainThread): Parsing macros/schema_tests/accepted_values.sql
+2019-05-03 14:08:31,443 (MainThread): Parsing macros/catalog.sql
+2019-05-03 14:08:31,446 (MainThread): Parsing macros/relations.sql
+2019-05-03 14:08:31,448 (MainThread): Parsing macros/adapters.sql
+2019-05-03 14:08:31,562 (MainThread): Acquiring new postgres connection "list_relations_without_caching".
+2019-05-03 14:08:31,562 (MainThread): Opening a new connection, currently in state init
+2019-05-03 14:08:31,595 (MainThread): Using postgres connection "list_relations_without_caching".
+2019-05-03 14:08:31,595 (MainThread): On list_relations_without_caching: BEGIN
+2019-05-03 14:08:31,596 (MainThread): SQL status: BEGIN in 0.00 seconds
+2019-05-03 14:08:31,596 (MainThread): Using postgres connection "list_relations_without_caching".
+2019-05-03 14:08:31,596 (MainThread): On list_relations_without_caching: select
+      'practicedb' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'practicedb'
+    union all
+    select
+      'practicedb' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'practicedb'
+  
+2019-05-03 14:08:31,600 (MainThread): SQL status: SELECT 0 in 0.00 seconds
+2019-05-03 14:08:31,601 (MainThread): On list_relations_without_caching: ROLLBACK
+2019-05-03 14:08:31,609 (MainThread): Acquiring new postgres connection "postgres_get_relations".
+2019-05-03 14:08:31,609 (MainThread): Re-using an available connection from the pool.
+2019-05-03 14:08:31,610 (MainThread): Using postgres connection "postgres_get_relations".
+2019-05-03 14:08:31,610 (MainThread): On postgres_get_relations: BEGIN
+2019-05-03 14:08:31,610 (MainThread): SQL status: BEGIN in 0.00 seconds
+2019-05-03 14:08:31,610 (MainThread): Using postgres connection "postgres_get_relations".
+2019-05-03 14:08:31,610 (MainThread): On postgres_get_relations: -- 
+    -- 
+    with relation as (
+        select
+            pg_rewrite.ev_class as class,
+            pg_rewrite.oid as id
+        from pg_rewrite
+    ),
+    class as (
+        select
+            oid as id,
+            relname as name,
+            relnamespace as schema,
+            relkind as kind
+        from pg_class
+    ),
+    dependency as (
+        select
+            pg_depend.objid as id,
+            pg_depend.refobjid as ref
+        from pg_depend
+    ),
+    schema as (
+        select
+            pg_namespace.oid as id,
+            pg_namespace.nspname as name
+        from pg_namespace
+        where nspname != 'information_schema' and nspname not like 'pg_%'
+    ),
+    referenced as (
+        select
+            relation.id AS id,
+            referenced_class.name ,
+            referenced_class.schema ,
+            referenced_class.kind
+        from relation
+        join class as referenced_class on relation.class=referenced_class.id
+        where referenced_class.kind in ('r', 'v')
+    ),
+    relationships as (
+        select
+            referenced.name as referenced_name,
+            referenced.schema as referenced_schema_id,
+            dependent_class.name as dependent_name,
+            dependent_class.schema as dependent_schema_id,
+            referenced.kind as kind
+        from referenced
+        join dependency on referenced.id=dependency.id
+        join class as dependent_class on dependency.ref=dependent_class.id
+        where
+            (referenced.name != dependent_class.name or
+             referenced.schema != dependent_class.schema)
+    )
+
+    select
+        referenced_schema.name as referenced_schema,
+        relationships.referenced_name as referenced_name,
+        dependent_schema.name as dependent_schema,
+        relationships.dependent_name as dependent_name
+    from relationships
+    join schema as dependent_schema on relationships.dependent_schema_id=dependent_schema.id
+    join schema as referenced_schema on relationships.referenced_schema_id=referenced_schema.id
+    group by referenced_schema, referenced_name, dependent_schema, dependent_name
+    order by referenced_schema, referenced_name, dependent_schema, dependent_name;
+2019-05-03 14:08:31,616 (MainThread): SQL status: SELECT 38 in 0.01 seconds
+2019-05-03 14:08:31,642 (MainThread): On postgres_get_relations: ROLLBACK
+2019-05-03 14:08:31,646 (MainThread): Acquiring new postgres connection "list_schemas".
+2019-05-03 14:08:31,646 (MainThread): Re-using an available connection from the pool.
+2019-05-03 14:08:31,647 (MainThread): Using postgres connection "list_schemas".
+2019-05-03 14:08:31,647 (MainThread): On list_schemas: 
+    select distinct nspname from pg_namespace
+  
+2019-05-03 14:08:31,647 (MainThread): SQL status: SELECT 7 in 0.00 seconds
+2019-05-03 14:08:31,648 (MainThread): Creating schema "practicedb"."practicedb".
+2019-05-03 14:08:31,650 (MainThread): Acquiring new postgres connection "master".
+2019-05-03 14:08:31,650 (MainThread): Re-using an available connection from the pool.
+2019-05-03 14:08:31,650 (MainThread): Using postgres connection "master".
+2019-05-03 14:08:31,650 (MainThread): On master: BEGIN
+2019-05-03 14:08:31,651 (MainThread): SQL status: BEGIN in 0.00 seconds
+2019-05-03 14:08:31,651 (MainThread): Using postgres connection "master".
+2019-05-03 14:08:31,651 (MainThread): On master: create schema if not exists "practicedb"
+2019-05-03 14:08:31,653 (MainThread): SQL status: CREATE SCHEMA in 0.00 seconds
+2019-05-03 14:08:31,654 (MainThread): On master: COMMIT
+2019-05-03 14:08:31,655 (MainThread): Using postgres connection "master".
+2019-05-03 14:08:31,655 (MainThread): On master: COMMIT
+2019-05-03 14:08:31,657 (MainThread): SQL status: COMMIT in 0.00 seconds
+2019-05-03 14:08:31,657 (MainThread): 14:08:31 | Concurrency: 1 threads (target='dev')
+2019-05-03 14:08:31,657 (MainThread): 14:08:31 | 
+2019-05-03 14:08:31,659 (Thread-1): 14:08:31 | 1 of 1 START view model practicedb.my_first_dbt_model................ [RUN]
+2019-05-03 14:08:31,660 (Thread-1): Compiling model.my_new_package.my_first_dbt_model
+2019-05-03 14:08:31,664 (Thread-1): Writing injected SQL for node "model.my_new_package.my_first_dbt_model"
+2019-05-03 14:08:31,702 (Thread-1): Acquiring new postgres connection "my_first_dbt_model".
+2019-05-03 14:08:31,702 (Thread-1): Opening a new connection, currently in state init
+2019-05-03 14:08:31,709 (Thread-1): Using postgres connection "my_first_dbt_model".
+2019-05-03 14:08:31,709 (Thread-1): On my_first_dbt_model: drop view if exists "practicedb"."practicedb"."my_first_dbt_model__dbt_tmp" cascade
+2019-05-03 14:08:31,711 (Thread-1): SQL status: DROP VIEW in 0.00 seconds
+2019-05-03 14:08:31,714 (Thread-1): Using postgres connection "my_first_dbt_model".
+2019-05-03 14:08:31,714 (Thread-1): On my_first_dbt_model: drop view if exists "practicedb"."practicedb"."my_first_dbt_model__dbt_backup" cascade
+2019-05-03 14:08:31,714 (Thread-1): SQL status: DROP VIEW in 0.00 seconds
+2019-05-03 14:08:31,716 (Thread-1): Writing runtime SQL for node "model.my_new_package.my_first_dbt_model"
+2019-05-03 14:08:31,717 (Thread-1): Using postgres connection "my_first_dbt_model".
+2019-05-03 14:08:31,717 (Thread-1): On my_first_dbt_model: BEGIN
+2019-05-03 14:08:31,717 (Thread-1): SQL status: BEGIN in 0.00 seconds
+2019-05-03 14:08:31,717 (Thread-1): Using postgres connection "my_first_dbt_model".
+2019-05-03 14:08:31,717 (Thread-1): On my_first_dbt_model: create view "practicedb"."practicedb"."my_first_dbt_model__dbt_tmp" as (
+    -- Welcome to your first dbt model!
+-- Did you know that you can also configure models directly within
+-- the SQL file? This will override configurations stated in dbt_project.yml
+
+-- Try changing 'view' to 'table', then re-running dbt
+
+
+
+select *,
+       Concat(first_name,' ', last_name) as full_name
+
+
+
+from public.actor
+  );
+2019-05-03 14:08:31,738 (Thread-1): SQL status: CREATE VIEW in 0.02 seconds
+2019-05-03 14:08:31,741 (Thread-1): Using postgres connection "my_first_dbt_model".
+2019-05-03 14:08:31,741 (Thread-1): On my_first_dbt_model: alter table "practicedb"."practicedb"."my_first_dbt_model__dbt_tmp" rename to "my_first_dbt_model"
+2019-05-03 14:08:31,742 (Thread-1): SQL status: ALTER TABLE in 0.00 seconds
+2019-05-03 14:08:31,743 (Thread-1): On my_first_dbt_model: COMMIT
+2019-05-03 14:08:31,743 (Thread-1): Using postgres connection "my_first_dbt_model".
+2019-05-03 14:08:31,743 (Thread-1): On my_first_dbt_model: COMMIT
+2019-05-03 14:08:31,761 (Thread-1): SQL status: COMMIT in 0.02 seconds
+2019-05-03 14:08:31,765 (Thread-1): Using postgres connection "my_first_dbt_model".
+2019-05-03 14:08:31,765 (Thread-1): On my_first_dbt_model: drop view if exists "practicedb"."practicedb"."my_first_dbt_model__dbt_backup" cascade
+2019-05-03 14:08:31,766 (Thread-1): SQL status: DROP VIEW in 0.00 seconds
+2019-05-03 14:08:31,770 (Thread-1): Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'a9dd5cb7-1bee-4ff5-a760-44c9c23baeee', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10fc9ff28>]}
+2019-05-03 14:08:31,956 (Thread-1): 14:08:31 | 1 of 1 OK created view model practicedb.my_first_dbt_model........... [CREATE VIEW in 0.11s]
+2019-05-03 14:08:31,969 (MainThread): 14:08:31 | 
+2019-05-03 14:08:31,970 (MainThread): 14:08:31 | Finished running 1 view models in 0.68s.
+2019-05-03 14:08:31,970 (MainThread): Connection 'master' was left open.
+2019-05-03 14:08:31,978 (MainThread): 
+2019-05-03 14:08:31,978 (MainThread): Completed successfully
+2019-05-03 14:08:31,978 (MainThread): 
+Done. PASS=1 ERROR=0 SKIP=0 TOTAL=1
+2019-05-03 14:08:31,978 (MainThread): Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10fe45b70>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10fe45358>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10fe45470>]}
+2019-05-03 14:08:32,164 (MainThread): Flushing usage events
